@@ -21,14 +21,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cQm-5O-mky">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dxo-gF-kzD" userLabel="Top Text Field">
-                                <rect key="frame" x="183.5" y="94" width="8" height="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dxo-gF-kzD" userLabel="Top Text Field">
+                                <rect key="frame" x="20" y="94" width="335" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-Sq-GrR" userLabel="Bottom Text Field">
-                                <rect key="frame" x="183.5" y="576" width="8" height="17"/>
+                            <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-Sq-GrR" userLabel="Bottom Text Field">
+                                <rect key="frame" x="20" y="576" width="335" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -53,14 +53,16 @@
                         <constraints>
                             <constraint firstItem="Gs7-Te-HTz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3e6-wD-Ydc"/>
                             <constraint firstItem="Gs7-Te-HTz" firstAttribute="top" secondItem="0iG-Sq-GrR" secondAttribute="bottom" constant="30" id="6FA-fu-FKu"/>
-                            <constraint firstItem="0iG-Sq-GrR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6zU-FH-yjM"/>
+                            <constraint firstItem="dxo-gF-kzD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KqI-wv-w7L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dxo-gF-kzD" secondAttribute="trailing" constant="20" id="OlH-e7-uX6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0iG-Sq-GrR" secondAttribute="trailing" constant="20" id="Q6F-43-f11"/>
                             <constraint firstItem="dxo-gF-kzD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="RGg-sj-ah7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cQm-5O-mky" secondAttribute="bottom" id="Rgx-MI-CeF"/>
                             <constraint firstItem="cQm-5O-mky" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T4x-L4-gi5"/>
                             <constraint firstItem="Gs7-Te-HTz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf5-up-8iT"/>
                             <constraint firstItem="cQm-5O-mky" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ceE-Ip-mcg"/>
-                            <constraint firstItem="dxo-gF-kzD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gqp-HI-35Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cQm-5O-mky" secondAttribute="trailing" id="iDd-GG-GOi"/>
+                            <constraint firstItem="0iG-Sq-GrR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lCS-cR-8Fn"/>
                             <constraint firstItem="Gs7-Te-HTz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="s6N-6K-8Pb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

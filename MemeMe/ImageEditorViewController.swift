@@ -51,6 +51,8 @@ final class ImageEditorViewController: UIViewController {
     private func applyTextFieldStyle() {
         topTextField.defaultTextAttributes = textAttributes
         bottomTextField.defaultTextAttributes = textAttributes
+        topTextField.textAlignment = .center
+        bottomTextField.textAlignment = .center
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
     }
@@ -69,6 +71,10 @@ final class ImageEditorViewController: UIViewController {
         
         present(imagePickerController, animated: true, completion: nil)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
 
 extension ImageEditorViewController: UITextFieldDelegate {
@@ -78,7 +84,9 @@ extension ImageEditorViewController: UITextFieldDelegate {
         return true
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text == "TOP" || textField.text == "BOTTOM" {
+            textField.text = ""
+        }
     }
 }
