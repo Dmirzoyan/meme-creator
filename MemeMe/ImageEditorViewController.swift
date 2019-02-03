@@ -41,9 +41,13 @@ final class ImageEditorViewController: UIViewController {
         topTextField.delegate = self
         bottomTextField.delegate = self
         
-        registerForKeyboardNotifications()
-        
         applyStyle()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        registerForKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
