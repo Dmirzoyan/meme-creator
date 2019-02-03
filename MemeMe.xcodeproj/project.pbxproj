@@ -15,6 +15,7 @@
 		AC664093220774BA00C95B6E /* ImageEditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC664092220774BA00C95B6E /* ImageEditorRouter.swift */; };
 		AC6640952207753200C95B6E /* ImageEditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640942207753200C95B6E /* ImageEditorInteractor.swift */; };
 		AC664099220779E300C95B6E /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC664098220779E300C95B6E /* ImagePickerDelegate.swift */; };
+		AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66409A22078EB500C95B6E /* KeyboardSlide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AC664092220774BA00C95B6E /* ImageEditorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorRouter.swift; sourceTree = "<group>"; };
 		AC6640942207753200C95B6E /* ImageEditorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorInteractor.swift; sourceTree = "<group>"; };
 		AC664098220779E300C95B6E /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
+		AC66409A22078EB500C95B6E /* KeyboardSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSlide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				AC664098220779E300C95B6E /* ImagePickerDelegate.swift */,
 				AC6640942207753200C95B6E /* ImageEditorInteractor.swift */,
 				AC664092220774BA00C95B6E /* ImageEditorRouter.swift */,
+				AC66409A22078EB500C95B6E /* KeyboardSlide.swift */,
 				AC6640842206E19F00C95B6E /* Main.storyboard */,
 				AC6640872206E1A300C95B6E /* Assets.xcassets */,
 				AC6640892206E1A300C95B6E /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 				AC6640832206E19F00C95B6E /* ImageEditorViewController.swift in Sources */,
 				AC664093220774BA00C95B6E /* ImageEditorRouter.swift in Sources */,
 				AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */,
+				AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */,
 				AC6640952207753200C95B6E /* ImageEditorInteractor.swift in Sources */,
 				AC664099220779E300C95B6E /* ImagePickerDelegate.swift in Sources */,
 			);
