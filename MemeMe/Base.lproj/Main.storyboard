@@ -39,7 +39,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gs7-Te-HTz">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Library" id="8EP-05-b7h"/>
+                                    <barButtonItem title="Library" id="8EP-05-b7h">
+                                        <connections>
+                                            <action selector="selectAnImageFromLibrary:" destination="BYZ-38-t0r" id="gQI-gR-URg"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Camera" id="Ltx-cH-ngn">
                                         <connections>
                                             <action selector="takeAPhoto:" destination="BYZ-38-t0r" id="Shc-Di-exo"/>
