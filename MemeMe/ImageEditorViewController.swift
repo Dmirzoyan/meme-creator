@@ -10,7 +10,7 @@ import UIKit
 
 protocol ImageEditorInteracting {
     
-    func openImagePicker()
+    func openImagePicker(with sourceType: UIImagePickerController.SourceType)
     func closeImagePicker()
     func share(_ image: UIImage)
     func save(_ userText: UserText)
@@ -24,8 +24,6 @@ final class ImageEditorViewController: UIViewController {
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
-    
-    private let isCameraAvailable = UIImagePickerController.isSourceTypeAvailable(.camera) ? true : false
     
     private var interactor: ImageEditorInteracting {
         return ImageEditorInteractor(
@@ -46,7 +44,7 @@ final class ImageEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cameraButton.isEnabled = isCameraAvailable
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera) ? true : false
         topTextField.delegate = self
         bottomTextField.delegate = self
         
@@ -89,10 +87,12 @@ final class ImageEditorViewController: UIViewController {
     }
     
     @IBAction func selectAnImageFromLibrary(_ sender: Any) {
-        interactor.openImagePicker()
+        interactor.openImagePicker(with: .photoLibrary)
     }
     
-    @IBAction func takeAPhoto(_ sender: Any) {}
+    @IBAction func takeAPhoto(_ sender: Any) {
+        interactor.openImagePicker(with: .camera)
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

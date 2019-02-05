@@ -12,7 +12,7 @@ typealias ShareCompletion = (Bool) -> Void
 
 protocol ImageEditorInternalRouting {
     
-    func openImagePicker()
+    func openImagePicker(with sourceType: UIImagePickerController.SourceType)
     func closeImagePicker()
     func share(_ image: UIImage, completion: @escaping ShareCompletion)
 }
@@ -30,9 +30,9 @@ final class ImageEditorRouter: ImageEditorInternalRouting {
         self.imagePickerDelegate = imagePickerDelegate
     }
     
-    func openImagePicker() {
+    func openImagePicker(with sourceType: UIImagePickerController.SourceType) {
         let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.sourceType = sourceType
         imagePickerController.delegate = imagePickerDelegate
         
         display.present(imagePickerController, animated: true, completion: nil)

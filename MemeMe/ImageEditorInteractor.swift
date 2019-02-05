@@ -25,8 +25,8 @@ final class ImageEditorInteractor: ImageEditorInteracting {
         self.presenter = presenter
     }
     
-    func openImagePicker() {
-        router.openImagePicker()
+    func openImagePicker(with sourceType: UIImagePickerController.SourceType) {
+        router.openImagePicker(with: sourceType)
     }
     
     func closeImagePicker() {
