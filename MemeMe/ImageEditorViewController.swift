@@ -13,6 +13,7 @@ protocol ImageEditorInteracting {
     func openImagePicker()
     func closeImagePicker()
     func share(_ image: UIImage)
+    func save(_ userText: UserText)
     func setSelected(_ image: UIImage)
 }
 
@@ -116,6 +117,7 @@ extension ImageEditorViewController {
     
     @objc func share() {
         if let image = generateEditedImage() {
+            interactor.save(UserText(top: topTextField.text, bottom: bottomTextField.text))
             interactor.share(image)
         }
     }
@@ -134,18 +136,12 @@ extension ImageEditorViewController {
     }
 }
 
-extension ImageEditorViewController: ImageEditorDisplaying {
-    func display(_ image: UIImage) {
-        imagePickerView.image = image
-    }
-}
-
 extension ImageEditorViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(
         _ picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
-        ) {
+    ) {
         if let image = info[.originalImage] as? UIImage {
             interactor.setSelected(image)
             interactor.closeImagePicker()
@@ -154,5 +150,12 @@ extension ImageEditorViewController: UIImagePickerControllerDelegate, UINavigati
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         interactor.closeImagePicker()
+    }
+}
+
+extension ImageEditorViewController: ImageEditorDisplaying {
+    
+    func display(_ image: UIImage) {
+        imagePickerView.image = image
     }
 }
