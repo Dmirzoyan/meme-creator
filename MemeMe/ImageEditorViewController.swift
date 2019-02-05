@@ -9,6 +9,8 @@
 import UIKit
 
 protocol ImageEditorInteracting {
+    
+    func share(_ image: UIImage)
 }
 
 final class ImageEditorViewController: UIViewController {
@@ -42,6 +44,7 @@ final class ImageEditorViewController: UIViewController {
         bottomTextField.delegate = self
         
         applyStyle()
+        addShareButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +61,15 @@ final class ImageEditorViewController: UIViewController {
     
     private func applyStyle() {
         applyTextFieldStyle()
+    }
+    
+    private func addShareButton() {
+        let shareButton = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(share)
+        )
+        navigationItem.leftBarButtonItem = shareButton
     }
     
     private func applyTextFieldStyle() {
@@ -100,5 +112,27 @@ extension ImageEditorViewController: UITextFieldDelegate {
         if textField.text == "TOP" || textField.text == "BOTTOM" {
             textField.text = ""
         }
+    }
+}
+
+extension ImageEditorViewController {
+    
+    @objc func share() {
+        if let image = generateEditedImage() {
+            interactor.share(image)
+        }
+    }
+    
+    func generateEditedImage() -> UIImage? {
+        toolbar.isHidden = true
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let editedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        toolbar.isHidden = false
+        
+        return editedImage
     }
 }

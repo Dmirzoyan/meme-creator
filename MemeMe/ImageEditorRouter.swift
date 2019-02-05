@@ -8,7 +8,10 @@
 
 import UIKit
 
+typealias ShareCompletion = (Bool) -> Void
+
 protocol ImageEditorInternalRouting {
+    func share(_ image: UIImage, completion: @escaping ShareCompletion)
 }
 
 final class ImageEditorRouter: ImageEditorInternalRouting {
@@ -17,5 +20,15 @@ final class ImageEditorRouter: ImageEditorInternalRouting {
     
     init(display: UIViewController) {
         self.display = display
+    }
+    
+    func share(_ image: UIImage, completion: @escaping ShareCompletion) {
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
+        activityViewController.completionWithItemsHandler = { _, success, _, _ in
+            completion(success)
+        }
+        
+        display.present(activityViewController, animated: true, completion: nil)
     }
 }
