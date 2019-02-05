@@ -14,9 +14,9 @@
 		AC66408B2206E1A300C95B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6640892206E1A300C95B6E /* LaunchScreen.storyboard */; };
 		AC664093220774BA00C95B6E /* ImageEditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC664092220774BA00C95B6E /* ImageEditorRouter.swift */; };
 		AC6640952207753200C95B6E /* ImageEditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640942207753200C95B6E /* ImageEditorInteractor.swift */; };
-		AC664099220779E300C95B6E /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC664098220779E300C95B6E /* ImagePickerDelegate.swift */; };
 		AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66409A22078EB500C95B6E /* KeyboardSlide.swift */; };
 		AC66409D220A231000C95B6E /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66409C220A231000C95B6E /* Meme.swift */; };
+		AC66409F220A411B00C95B6E /* ImageEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66409E220A411B00C95B6E /* ImageEditorPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +29,9 @@
 		AC66408C2206E1A300C95B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC664092220774BA00C95B6E /* ImageEditorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorRouter.swift; sourceTree = "<group>"; };
 		AC6640942207753200C95B6E /* ImageEditorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorInteractor.swift; sourceTree = "<group>"; };
-		AC664098220779E300C95B6E /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
 		AC66409A22078EB500C95B6E /* KeyboardSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSlide.swift; sourceTree = "<group>"; };
 		AC66409C220A231000C95B6E /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		AC66409E220A411B00C95B6E /* ImageEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +66,10 @@
 			children = (
 				AC6640802206E19F00C95B6E /* AppDelegate.swift */,
 				AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */,
-				AC664098220779E300C95B6E /* ImagePickerDelegate.swift */,
 				AC66409A22078EB500C95B6E /* KeyboardSlide.swift */,
 				AC6640942207753200C95B6E /* ImageEditorInteractor.swift */,
 				AC664092220774BA00C95B6E /* ImageEditorRouter.swift */,
+				AC66409E220A411B00C95B6E /* ImageEditorPresenter.swift */,
 				AC66409C220A231000C95B6E /* Meme.swift */,
 				AC6640842206E19F00C95B6E /* Main.storyboard */,
 				AC6640872206E1A300C95B6E /* Assets.xcassets */,
@@ -156,7 +156,7 @@
 				AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */,
 				AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */,
 				AC6640952207753200C95B6E /* ImageEditorInteractor.swift in Sources */,
-				AC664099220779E300C95B6E /* ImagePickerDelegate.swift in Sources */,
+				AC66409F220A411B00C95B6E /* ImageEditorPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

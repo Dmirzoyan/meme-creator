@@ -8,12 +8,27 @@
 
 import UIKit
 
+protocol ImageEditorPresenting {
+    
+    func present(_ image: UIImage)
+}
+
 final class ImageEditorInteractor: ImageEditorInteracting {
     
     private let router: ImageEditorInternalRouting
+    private let presenter: ImageEditorPresenting
     
-    init(router: ImageEditorInternalRouting) {
+    init(router: ImageEditorInternalRouting, presenter: ImageEditorPresenting) {
         self.router = router
+        self.presenter = presenter
+    }
+    
+    func openImagePicker() {
+        router.openImagePicker()
+    }
+    
+    func closeImagePicker() {
+        router.closeImagePicker()
     }
     
     func share(_ image: UIImage) {
@@ -22,6 +37,10 @@ final class ImageEditorInteractor: ImageEditorInteracting {
                 self?.save(originalImage: image, editedImage: image)
             }
         }
+    }
+    
+    func setSelected(_ image: UIImage) {
+        presenter.present(image)
     }
     
     private func save(

@@ -10,7 +10,10 @@ import UIKit
 
 protocol ImageEditorInteracting {
     
+    func openImagePicker()
+    func closeImagePicker()
     func share(_ image: UIImage)
+    func setSelected(_ image: UIImage)
 }
 
 final class ImageEditorViewController: UIViewController {
@@ -24,7 +27,10 @@ final class ImageEditorViewController: UIViewController {
     private let isCameraAvailable = UIImagePickerController.isSourceTypeAvailable(.camera) ? true : false
     
     private var interactor: ImageEditorInteracting {
-        return ImageEditorInteractor(router: ImageEditorRouter(display: self))
+        return ImageEditorInteractor(
+            router: ImageEditorRouter(display: self, imagePickerDelegate: self),
+            presenter: ImageEditorPresenter(display: self)
+        )
     }
     
     private var textAttributes: [NSAttributedString.Key: Any] {
@@ -82,19 +88,10 @@ final class ImageEditorViewController: UIViewController {
     }
     
     @IBAction func selectAnImageFromLibrary(_ sender: Any) {
-        openImagePicker()
+        interactor.openImagePicker()
     }
     
-    @IBAction func takeAPhoto(_ sender: Any) {
-    }
-    
-    private func openImagePicker() {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        
-        present(imagePickerController, animated: true, completion: nil)
-    }
+    @IBAction func takeAPhoto(_ sender: Any) {}
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -134,5 +131,28 @@ extension ImageEditorViewController {
         toolbar.isHidden = false
         
         return editedImage
+    }
+}
+
+extension ImageEditorViewController: ImageEditorDisplaying {
+    func display(_ image: UIImage) {
+        imagePickerView.image = image
+    }
+}
+
+extension ImageEditorViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+        ) {
+        if let image = info[.originalImage] as? UIImage {
+            interactor.setSelected(image)
+            interactor.closeImagePicker()
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        interactor.closeImagePicker()
     }
 }
