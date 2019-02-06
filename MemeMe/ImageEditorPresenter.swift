@@ -17,20 +17,26 @@ final class ImageEditorPresenter: ImageEditorPresenting {
     
     private let display: ImageEditorDisplaying
     
+    private var defaultViewState = {
+        return ImageEditorViewState(
+            shareButtonIsEnabled: false,
+            cancelButtonIsEnabled: false,
+            topText: "TOP",
+            bottomText: "BOTTOM",
+            image: nil
+        )
+    }()
+    
     init(display: ImageEditorDisplaying) {
         self.display = display
     }
     
     func presentInitialView() {
-        display.apply(
-            ImageEditorViewState(
-                shareButtonIsEnabled: false,
-                cancelButtonIsEnabled: false,
-                topText: "TOP",
-                bottomText: "BOTTOM",
-                image: nil
-            )
-        )
+        display.apply(defaultViewState)
+    }
+    
+    func clearImage() {
+        display.apply(defaultViewState)
     }
     
     func present(_ image: UIImage) {
@@ -41,18 +47,6 @@ final class ImageEditorPresenter: ImageEditorPresenting {
                 topText: nil,
                 bottomText: nil,
                 image: image
-            )
-        )
-    }
-    
-    func clearImage() {
-        display.apply(
-            ImageEditorViewState(
-                shareButtonIsEnabled: false,
-                cancelButtonIsEnabled: false,
-                topText: "TOP",
-                bottomText: "BOTTOM",
-                image: nil
             )
         )
     }
