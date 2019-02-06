@@ -109,8 +109,6 @@ final class ImageEditorViewController: UIViewController {
         bottomTextField.defaultTextAttributes = textAttributes
         topTextField.textAlignment = .center
         bottomTextField.textAlignment = .center
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
     }
     
     @IBAction func selectAnImageFromLibrary(_ sender: Any) {
@@ -188,7 +186,15 @@ extension ImageEditorViewController: ImageEditorDisplaying {
     
     func apply(_ viewState: ImageEditorViewState) {
         imagePickerView.image = viewState.image
+        
         navigationItem.leftBarButtonItem?.isEnabled = viewState.shareButtonIsEnabled
         navigationItem.rightBarButtonItem?.isEnabled = viewState.cancelButtonIsEnabled
+        
+        if let topText = viewState.topText {
+            topTextField.text = topText
+        }
+        if let bottomText = viewState.bottomText {
+            bottomTextField.text = bottomText
+        }
     }
 }

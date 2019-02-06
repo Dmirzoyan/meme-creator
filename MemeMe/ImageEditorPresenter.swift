@@ -26,6 +26,8 @@ final class ImageEditorPresenter: ImageEditorPresenting {
             ImageEditorViewState(
                 shareButtonIsEnabled: false,
                 cancelButtonIsEnabled: false,
+                topText: "TOP",
+                bottomText: "BOTTOM",
                 image: nil
             )
         )
@@ -36,6 +38,8 @@ final class ImageEditorPresenter: ImageEditorPresenting {
             ImageEditorViewState(
                 shareButtonIsEnabled: true,
                 cancelButtonIsEnabled: true,
+                topText: nil,
+                bottomText: nil,
                 image: image
             )
         )
@@ -46,6 +50,8 @@ final class ImageEditorPresenter: ImageEditorPresenting {
             ImageEditorViewState(
                 shareButtonIsEnabled: false,
                 cancelButtonIsEnabled: false,
+                topText: "TOP",
+                bottomText: "BOTTOM",
                 image: nil
             )
         )

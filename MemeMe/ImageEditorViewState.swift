@@ -12,5 +12,7 @@ struct ImageEditorViewState {
     
     let shareButtonIsEnabled: Bool
     let cancelButtonIsEnabled: Bool
+    let topText: String?
+    let bottomText: String?
     let image: UIImage?
 }
