@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cQm-5O-mky">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dxo-gF-kzD" userLabel="Top Text Field">
                                 <rect key="frame" x="20" y="94" width="335" height="17"/>
@@ -60,13 +60,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dxo-gF-kzD" secondAttribute="trailing" constant="20" id="OlH-e7-uX6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0iG-Sq-GrR" secondAttribute="trailing" constant="20" id="Q6F-43-f11"/>
                             <constraint firstItem="dxo-gF-kzD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="RGg-sj-ah7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cQm-5O-mky" secondAttribute="bottom" id="Rgx-MI-CeF"/>
                             <constraint firstItem="cQm-5O-mky" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T4x-L4-gi5"/>
                             <constraint firstItem="Gs7-Te-HTz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf5-up-8iT"/>
                             <constraint firstItem="cQm-5O-mky" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ceE-Ip-mcg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cQm-5O-mky" secondAttribute="trailing" id="iDd-GG-GOi"/>
                             <constraint firstItem="0iG-Sq-GrR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lCS-cR-8Fn"/>
                             <constraint firstItem="Gs7-Te-HTz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="s6N-6K-8Pb"/>
+                            <constraint firstItem="Gs7-Te-HTz" firstAttribute="top" secondItem="cQm-5O-mky" secondAttribute="bottom" id="wPW-2d-zn5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
