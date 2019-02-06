@@ -69,12 +69,28 @@ final class ImageEditorViewController: UIViewController {
     
     private func applyStyle() {
         view.backgroundColor = UIColor.AppTheme.darkGrey
+        applyNavigationBarStyle()
         applyTextFieldStyle()
+    }
+    
+    private func applyNavigationBarStyle() {
+        guard let navigationBar = navigationController?.navigationBar
+        else { return }
+        
+        navigationBar.barStyle = .blackTranslucent
+        navigationBar.barTintColor = UIColor.AppTheme.darkGrey
     }
     
     private func addNavigationBarButtons() {
         addShareButton()
         addCancelButton()
+    }
+    
+    private func applyTextFieldStyle() {
+        topTextField.defaultTextAttributes = textAttributes
+        bottomTextField.defaultTextAttributes = textAttributes
+        topTextField.textAlignment = .center
+        bottomTextField.textAlignment = .center
     }
     
     private func addShareButton() {
@@ -83,6 +99,7 @@ final class ImageEditorViewController: UIViewController {
             target: self,
             action: #selector(share)
         )
+        shareButton.tintColor = .white
         navigationItem.leftBarButtonItem = shareButton
     }
     
@@ -92,14 +109,8 @@ final class ImageEditorViewController: UIViewController {
             target: self,
             action: #selector(cancel)
         )
+        cancelButton.tintColor = .white
         navigationItem.rightBarButtonItem = cancelButton
-    }
-    
-    private func applyTextFieldStyle() {
-        topTextField.defaultTextAttributes = textAttributes
-        bottomTextField.defaultTextAttributes = textAttributes
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
     }
     
     @IBAction func selectAnImageFromLibrary(_ sender: Any) {

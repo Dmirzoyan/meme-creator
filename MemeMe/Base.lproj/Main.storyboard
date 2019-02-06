@@ -41,20 +41,21 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="GdI-2C-YhR"/>
                                     <barButtonItem title="Library" image="gallery" id="8EP-05-b7h">
-                                        <color key="tintColor" red="0.19979265332221985" green="0.21826529502868652" blue="0.21893548965454102" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="selectAnImageFromLibrary:" destination="BYZ-38-t0r" id="gQI-gR-URg"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="nAl-EN-MWi"/>
                                     <barButtonItem title="Camera" image="camera" style="plain" id="Ltx-cH-ngn">
-                                        <color key="tintColor" red="0.19979265332221985" green="0.21826529502868652" blue="0.21893548965454102" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="takeAPhoto:" destination="BYZ-38-t0r" id="Shc-Di-exo"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Bgc-Pd-Gj0"/>
                                 </items>
+                                <color key="barTintColor" red="0.19979265332221985" green="0.21826529502868652" blue="0.21893548965454102" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,11 +67,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0iG-Sq-GrR" secondAttribute="trailing" constant="20" id="Q6F-43-f11"/>
                             <constraint firstItem="dxo-gF-kzD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="RGg-sj-ah7"/>
                             <constraint firstItem="cQm-5O-mky" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T4x-L4-gi5"/>
-                            <constraint firstItem="Gs7-Te-HTz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uf5-up-8iT"/>
                             <constraint firstItem="cQm-5O-mky" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ceE-Ip-mcg"/>
+                            <constraint firstItem="Gs7-Te-HTz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ehi-24-JiU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cQm-5O-mky" secondAttribute="trailing" id="iDd-GG-GOi"/>
                             <constraint firstItem="0iG-Sq-GrR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lCS-cR-8Fn"/>
-                            <constraint firstItem="Gs7-Te-HTz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="s6N-6K-8Pb"/>
+                            <constraint firstAttribute="trailing" secondItem="Gs7-Te-HTz" secondAttribute="trailing" id="vac-pY-F17"/>
                             <constraint firstItem="Gs7-Te-HTz" firstAttribute="top" secondItem="cQm-5O-mky" secondAttribute="bottom" id="wPW-2d-zn5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
