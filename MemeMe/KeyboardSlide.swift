@@ -41,8 +41,7 @@ extension ImageEditorViewController {
         guard
             let userInfo = notification.userInfo,
             let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
-            bottomTextField.isFirstResponder,
-            keyboardFrameIsChanged(userInfo)
+            bottomTextField.isFirstResponder
             else { return }
         
         view.frame.origin.y -= keyboardSize.cgRectValue.height
@@ -55,12 +54,5 @@ extension ImageEditorViewController {
             else { return }
         
         view.frame.origin.y += keyboardSize.cgRectValue.height
-    }
-    
-    private func keyboardFrameIsChanged(_ keyboardInfo: [AnyHashable : Any]) -> Bool {
-        let keyboardSizeAtStart = keyboardInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue
-        let keyboardSizeAtEnd = keyboardInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
-        
-        return keyboardSizeAtStart != keyboardSizeAtEnd
     }
 }
