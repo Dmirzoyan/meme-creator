@@ -8,15 +8,6 @@
 
 import UIKit
 
-extension UIColor {
-    
-    struct AppTheme {
-        static var darkGrey: UIColor  {
-            return UIColor(red: 0.2, green: 0.22, blue: 0.22, alpha: 1)
-        }
-    }
-}
-
 protocol ImageEditorInteracting {
     
     func setInitialView()
