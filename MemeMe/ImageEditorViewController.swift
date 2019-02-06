@@ -8,13 +8,24 @@
 
 import UIKit
 
+extension UIColor {
+    
+    struct AppTheme {
+        static var darkGrey: UIColor  {
+            return UIColor(red: 0.2, green: 0.22, blue: 0.22, alpha: 1)
+        }
+    }
+}
+
 protocol ImageEditorInteracting {
     
+    func setInitialView()
     func openImagePicker(with sourceType: UIImagePickerController.SourceType)
     func closeImagePicker()
     func share(_ image: UIImage)
     func save(_ userText: UserText)
     func setSelected(_ image: UIImage)
+    func clearImage()
 }
 
 final class ImageEditorViewController: UIViewController {
@@ -25,17 +36,17 @@ final class ImageEditorViewController: UIViewController {
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
-    private var interactor: ImageEditorInteracting {
+    private lazy var interactor: ImageEditorInteracting = {
         return ImageEditorInteractor(
             router: ImageEditorRouter(display: self, imagePickerDelegate: self),
             presenter: ImageEditorPresenter(display: self)
         )
-    }
+    }()
     
     private var textAttributes: [NSAttributedString.Key: Any] {
         return [
             NSAttributedString.Key.strokeColor: UIColor.black,
-            NSAttributedString.Key.strokeWidth: 2,
+            NSAttributedString.Key.strokeWidth: -2,
             NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
         ]
@@ -49,7 +60,8 @@ final class ImageEditorViewController: UIViewController {
         bottomTextField.delegate = self
         
         applyStyle()
-        addShareButton()
+        addNavigationBarButtons()
+        interactor.setInitialView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +77,13 @@ final class ImageEditorViewController: UIViewController {
     }
     
     private func applyStyle() {
+        view.backgroundColor = UIColor.AppTheme.darkGrey
         applyTextFieldStyle()
+    }
+    
+    private func addNavigationBarButtons() {
+        addShareButton()
+        addCancelButton()
     }
     
     private func addShareButton() {
@@ -75,6 +93,15 @@ final class ImageEditorViewController: UIViewController {
             action: #selector(share)
         )
         navigationItem.leftBarButtonItem = shareButton
+    }
+    
+    private func addCancelButton() {
+        let cancelButton = UIBarButtonItem(
+            barButtonSystemItem: .cancel,
+            target: self,
+            action: #selector(cancel)
+        )
+        navigationItem.rightBarButtonItem = cancelButton
     }
     
     private func applyTextFieldStyle() {
@@ -122,6 +149,10 @@ extension ImageEditorViewController {
         }
     }
     
+    @objc func cancel() {
+        interactor.clearImage()
+    }
+    
     func generateEditedImage() -> UIImage? {
         toolbar.isHidden = true
         
@@ -155,7 +186,9 @@ extension ImageEditorViewController: UIImagePickerControllerDelegate, UINavigati
 
 extension ImageEditorViewController: ImageEditorDisplaying {
     
-    func display(_ image: UIImage) {
-        imagePickerView.image = image
+    func apply(_ viewState: ImageEditorViewState) {
+        imagePickerView.image = viewState.image
+        navigationItem.leftBarButtonItem?.isEnabled = viewState.shareButtonIsEnabled
+        navigationItem.rightBarButtonItem?.isEnabled = viewState.cancelButtonIsEnabled
     }
 }

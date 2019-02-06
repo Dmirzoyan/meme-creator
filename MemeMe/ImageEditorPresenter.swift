@@ -10,7 +10,7 @@ import UIKit
 
 protocol ImageEditorDisplaying {
     
-    func display(_ image: UIImage)
+    func apply(_ viewState: ImageEditorViewState)
 }
 
 final class ImageEditorPresenter: ImageEditorPresenting {
@@ -21,7 +21,33 @@ final class ImageEditorPresenter: ImageEditorPresenting {
         self.display = display
     }
     
+    func presentInitialView() {
+        display.apply(
+            ImageEditorViewState(
+                shareButtonIsEnabled: false,
+                cancelButtonIsEnabled: false,
+                image: nil
+            )
+        )
+    }
+    
     func present(_ image: UIImage) {
-        display.display(image)
+        display.apply(
+            ImageEditorViewState(
+                shareButtonIsEnabled: true,
+                cancelButtonIsEnabled: true,
+                image: image
+            )
+        )
+    }
+    
+    func clearImage() {
+        display.apply(
+            ImageEditorViewState(
+                shareButtonIsEnabled: false,
+                cancelButtonIsEnabled: false,
+                image: nil
+            )
+        )
     }
 }

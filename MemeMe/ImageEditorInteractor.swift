@@ -10,7 +10,9 @@ import UIKit
 
 protocol ImageEditorPresenting {
     
+    func presentInitialView()
     func present(_ image: UIImage)
+    func clearImage()
 }
 
 final class ImageEditorInteractor: ImageEditorInteracting {
@@ -23,6 +25,10 @@ final class ImageEditorInteractor: ImageEditorInteracting {
     init(router: ImageEditorInternalRouting, presenter: ImageEditorPresenting) {
         self.router = router
         self.presenter = presenter
+    }
+    
+    func setInitialView() {
+        presenter.presentInitialView()
     }
     
     func openImagePicker(with sourceType: UIImagePickerController.SourceType) {
@@ -42,6 +48,7 @@ final class ImageEditorInteractor: ImageEditorInteracting {
         router.share(image) { [weak self] success in
             if success {
                 self?.saveMeme(editedImage: image)
+                self?.presenter.clearImage()
             }
         }
     }
@@ -49,6 +56,10 @@ final class ImageEditorInteractor: ImageEditorInteracting {
     func setSelected(_ image: UIImage) {
         originalImage = image
         presenter.present(image)
+    }
+    
+    func clearImage() {
+        presenter.clearImage()
     }
     
     private func saveMeme(editedImage: UIImage) {
