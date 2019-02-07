@@ -47,11 +47,11 @@ final class ImageEditorViewController: UIViewController {
         super.viewDidLoad()
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera) ? true : false
-        topTextField.delegate = self
-        bottomTextField.delegate = self
-        
         applyStyle()
+        setup(topTextField)
+        setup(bottomTextField)
         addNavigationBarButtons()
+        
         interactor.setInitialView()
     }
     
@@ -70,7 +70,6 @@ final class ImageEditorViewController: UIViewController {
     private func applyStyle() {
         view.backgroundColor = UIColor.AppTheme.darkGrey
         applyNavigationBarStyle()
-        applyTextFieldStyle()
     }
     
     private func applyNavigationBarStyle() {
@@ -81,16 +80,15 @@ final class ImageEditorViewController: UIViewController {
         navigationBar.barTintColor = UIColor.AppTheme.darkGrey
     }
     
+    private func setup(_ textField: UITextField) {
+        textField.defaultTextAttributes = textAttributes
+        textField.textAlignment = .center
+        textField.delegate = self
+    }
+    
     private func addNavigationBarButtons() {
         addShareButton()
         addCancelButton()
-    }
-    
-    private func applyTextFieldStyle() {
-        topTextField.defaultTextAttributes = textAttributes
-        bottomTextField.defaultTextAttributes = textAttributes
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
     }
     
     private func addShareButton() {
