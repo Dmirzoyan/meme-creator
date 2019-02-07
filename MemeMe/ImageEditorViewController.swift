@@ -11,7 +11,10 @@ import UIKit
 protocol ImageEditorInteracting {
     
     func setInitialView()
-    func openImagePicker(with sourceType: UIImagePickerController.SourceType)
+    func openImagePicker(
+        with sourceType: UIImagePickerController.SourceType,
+        delegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate
+    )
     func closeImagePicker()
     func share(_ image: UIImage)
     func save(_ userText: UserText)
@@ -26,13 +29,8 @@ final class ImageEditorViewController: UIViewController {
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
-    
-    private lazy var interactor: ImageEditorInteracting = {
-        return ImageEditorInteractor(
-            router: ImageEditorRouter(display: self, imagePickerDelegate: self),
-            presenter: ImageEditorPresenter(display: self)
-        )
-    }()
+
+    var interactor: ImageEditorInteracting!
     
     private var textAttributes: [NSAttributedString.Key: Any] {
         return [
@@ -112,11 +110,11 @@ final class ImageEditorViewController: UIViewController {
     }
     
     @IBAction func selectAnImageFromLibrary(_ sender: Any) {
-        interactor.openImagePicker(with: .photoLibrary)
+        interactor.openImagePicker(with: .photoLibrary, delegate: self)
     }
     
     @IBAction func takeAPhoto(_ sender: Any) {
-        interactor.openImagePicker(with: .camera)
+        interactor.openImagePicker(with: .camera, delegate: self)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

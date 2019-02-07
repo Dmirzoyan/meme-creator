@@ -10,36 +10,59 @@ import UIKit
 
 typealias ShareCompletion = (Bool) -> Void
 
+protocol ImageEditorRouting {
+    func start()
+}
+
 protocol ImageEditorInternalRouting {
     
-    func openImagePicker(with sourceType: UIImagePickerController.SourceType)
+    func openImagePicker(
+        with sourceType: UIImagePickerController.SourceType,
+        delegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate
+    )
     func closeImagePicker()
     func share(_ image: UIImage, completion: @escaping ShareCompletion)
 }
 
-final class ImageEditorRouter: ImageEditorInternalRouting {
+final class ImageEditorRouter: ImageEditorRouting {
     
-    private let display: UIViewController
-    private let imagePickerDelegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate
+    private let navigationController: UINavigationController
+    private let displayFactory: ImageEditorDisplayProducing
+    private var viewController: UIViewController?
     
     init(
-        display: UIViewController,
-        imagePickerDelegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        navigationController: UINavigationController,
+        displayFactory: ImageEditorDisplayProducing
     ) {
-        self.display = display
-        self.imagePickerDelegate = imagePickerDelegate
+        self.navigationController = navigationController
+        self.displayFactory =  displayFactory
     }
     
-    func openImagePicker(with sourceType: UIImagePickerController.SourceType) {
+    func start() {
+        viewController = displayFactory.make(router: self)
+        
+        guard let viewController = viewController
+        else { return }
+        
+        navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+extension ImageEditorRouter: ImageEditorInternalRouting {
+    
+    func openImagePicker(
+        with sourceType: UIImagePickerController.SourceType,
+        delegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate
+    ) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = sourceType
-        imagePickerController.delegate = imagePickerDelegate
+        imagePickerController.delegate = delegate
         
-        display.present(imagePickerController, animated: true, completion: nil)
+        viewController?.present(imagePickerController, animated: true, completion: nil)
     }
     
     func closeImagePicker() {
-        display.dismiss(animated: true, completion: nil)
+        viewController?.dismiss(animated: true, completion: nil)
     }
     
     func share(_ image: UIImage, completion: @escaping ShareCompletion) {
@@ -49,6 +72,6 @@ final class ImageEditorRouter: ImageEditorInternalRouting {
             completion(success)
         }
         
-        display.present(activityViewController, animated: true, completion: nil)
+        viewController?.present(activityViewController, animated: true, completion: nil)
     }
 }

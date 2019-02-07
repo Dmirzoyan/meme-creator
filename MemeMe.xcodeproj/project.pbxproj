@@ -20,6 +20,8 @@
 		AC6640A7220B7A7500C95B6E /* ImageEditorViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640A6220B7A7500C95B6E /* ImageEditorViewState.swift */; };
 		AC6640AA220B8CC700C95B6E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640A9220B8CC700C95B6E /* Theme.swift */; };
 		AC6640AC220B8DA200C95B6E /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC6640AB220B8DA200C95B6E /* Asset.xcassets */; };
+		AC6640AE220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640AD220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift */; };
+		AC6640B0220CB8A000C95B6E /* ImageEditorRouterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640AF220CB8A000C95B6E /* ImageEditorRouterFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		AC6640A6220B7A7500C95B6E /* ImageEditorViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewState.swift; sourceTree = "<group>"; };
 		AC6640A9220B8CC700C95B6E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		AC6640AB220B8DA200C95B6E /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
+		AC6640AD220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorDisplayFactory.swift; sourceTree = "<group>"; };
+		AC6640AF220CB8A000C95B6E /* ImageEditorRouterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorRouterFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +78,9 @@
 				AC6640802206E19F00C95B6E /* AppDelegate.swift */,
 				AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */,
 				AC66409A22078EB500C95B6E /* KeyboardSlide.swift */,
+				AC6640AF220CB8A000C95B6E /* ImageEditorRouterFactory.swift */,
 				AC664092220774BA00C95B6E /* ImageEditorRouter.swift */,
+				AC6640AD220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift */,
 				AC6640942207753200C95B6E /* ImageEditorInteractor.swift */,
 				AC66409E220A411B00C95B6E /* ImageEditorPresenter.swift */,
 				AC6640A6220B7A7500C95B6E /* ImageEditorViewState.swift */,
@@ -171,9 +177,11 @@
 				AC664093220774BA00C95B6E /* ImageEditorRouter.swift in Sources */,
 				AC66409D220A231000C95B6E /* Meme.swift in Sources */,
 				AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */,
+				AC6640AE220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift in Sources */,
 				AC6640A7220B7A7500C95B6E /* ImageEditorViewState.swift in Sources */,
 				AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */,
 				AC6640A1220A485700C95B6E /* UserText.swift in Sources */,
+				AC6640B0220CB8A000C95B6E /* ImageEditorRouterFactory.swift in Sources */,
 				AC6640AA220B8CC700C95B6E /* Theme.swift in Sources */,
 				AC6640952207753200C95B6E /* ImageEditorInteractor.swift in Sources */,
 				AC66409F220A411B00C95B6E /* ImageEditorPresenter.swift in Sources */,
