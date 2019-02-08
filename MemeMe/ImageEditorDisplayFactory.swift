@@ -9,21 +9,15 @@
 import UIKit
 
 protocol ImageEditorDisplayProducing {
-    
     func make(router: ImageEditorInternalRouting) -> UIViewController
 }
 
 final class ImageEditorDisplayFactory: ImageEditorDisplayProducing {
     
     func make(router: ImageEditorInternalRouting) -> UIViewController {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        guard let viewController = storyboard.instantiateViewController(
-            withIdentifier: "ImageEditorViewController"
-        ) as? ImageEditorViewController
-        else {return UIViewController()}
-        
+        let viewController = ImageEditorViewController()
         let presenter = ImageEditorPresenter(display: viewController)
+        
         let interactor = ImageEditorInteractor(
             router: router,
             presenter: presenter

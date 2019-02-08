@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageEditorViewController" customModule="MemeMe" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomTextField" destination="u1r-3w-scU" id="Dqe-hT-0Rl"/>
+                <outlet property="cameraButton" destination="k68-k7-0du" id="ojz-Sl-rx0"/>
+                <outlet property="imagePickerView" destination="312-C1-9MD" id="clB-xt-9Rc"/>
+                <outlet property="toolbar" destination="Lfj-7n-GA8" id="Xye-uz-xSY"/>
+                <outlet property="topTextField" destination="uFH-pg-hQP" id="SZr-3c-c9D"/>
+                <outlet property="view" destination="xSV-jh-35U" id="nkn-wp-fAa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="xSV-jh-35U">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="312-C1-9MD">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uFH-pg-hQP" userLabel="Top Text Field">
+                    <rect key="frame" x="20" y="50" width="335" height="17"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                </textField>
+                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1r-3w-scU" userLabel="Bottom Text Field">
+                    <rect key="frame" x="20" y="575" width="335" height="17"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                </textField>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfj-7n-GA8">
+                    <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="NZD-EC-c2O"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="OIV-V7-LUc"/>
+                        <barButtonItem title="Library" image="gallery" id="hPT-Zr-Asb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="selectAnImageFromLibrary:" destination="-1" id="sJV-y2-lld"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="qCT-GE-Rab"/>
+                        <barButtonItem title="Camera" image="camera" style="plain" id="k68-k7-0du">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="takeAPhoto:" destination="-1" id="10u-D2-OYR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="4ge-L4-e1f"/>
+                    </items>
+                    <color key="barTintColor" red="0.19979265330000001" green="0.218265295" blue="0.21893548970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="w6s-yh-GLt" firstAttribute="trailing" secondItem="u1r-3w-scU" secondAttribute="trailing" constant="20" id="7Xe-af-v0h"/>
+                <constraint firstItem="312-C1-9MD" firstAttribute="top" secondItem="xSV-jh-35U" secondAttribute="top" id="7h1-Iz-fk7"/>
+                <constraint firstItem="w6s-yh-GLt" firstAttribute="trailing" secondItem="uFH-pg-hQP" secondAttribute="trailing" constant="20" id="EgD-Su-ROd"/>
+                <constraint firstItem="uFH-pg-hQP" firstAttribute="leading" secondItem="w6s-yh-GLt" secondAttribute="leading" constant="20" id="N0R-4K-YFt"/>
+                <constraint firstItem="Lfj-7n-GA8" firstAttribute="bottom" secondItem="w6s-yh-GLt" secondAttribute="bottom" id="R5N-K7-Ql0"/>
+                <constraint firstAttribute="bottom" secondItem="312-C1-9MD" secondAttribute="bottom" id="Uqy-g2-c3d"/>
+                <constraint firstItem="Lfj-7n-GA8" firstAttribute="top" secondItem="u1r-3w-scU" secondAttribute="bottom" constant="30" id="Yx4-EI-W6h"/>
+                <constraint firstItem="uFH-pg-hQP" firstAttribute="top" secondItem="w6s-yh-GLt" secondAttribute="top" constant="30" id="cTM-8r-qTE"/>
+                <constraint firstItem="312-C1-9MD" firstAttribute="leading" secondItem="xSV-jh-35U" secondAttribute="leading" id="cxH-dl-3H6"/>
+                <constraint firstAttribute="trailing" secondItem="312-C1-9MD" secondAttribute="trailing" id="f7J-xd-4vY"/>
+                <constraint firstItem="u1r-3w-scU" firstAttribute="leading" secondItem="w6s-yh-GLt" secondAttribute="leading" constant="20" id="geW-uS-TKm"/>
+                <constraint firstAttribute="trailing" secondItem="Lfj-7n-GA8" secondAttribute="trailing" id="gxd-uo-kYA"/>
+                <constraint firstItem="Lfj-7n-GA8" firstAttribute="leading" secondItem="xSV-jh-35U" secondAttribute="leading" id="ttR-AB-XWz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="w6s-yh-GLt"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="camera" width="45" height="45"/>
+        <image name="gallery" width="45" height="45"/>
+    </resources>
+</document>
