@@ -74,19 +74,11 @@
 		AC66407F2206E19F00C95B6E /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				ACFE040B22248588005DCE14 /* Shared Images */,
+				ACFE040A22248307005DCE14 /* Image Editor */,
 				AC6640A8220B8CB600C95B6E /* Theme */,
 				AC6640802206E19F00C95B6E /* AppDelegate.swift */,
-				AC6640B5220DF42600C95B6E /* ImageEditorViewController.xib */,
-				AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */,
-				AC66409A22078EB500C95B6E /* KeyboardSlide.swift */,
-				AC6640AF220CB8A000C95B6E /* ImageEditorRouterFactory.swift */,
-				AC664092220774BA00C95B6E /* ImageEditorRouter.swift */,
-				AC6640AD220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift */,
-				AC6640942207753200C95B6E /* ImageEditorInteractor.swift */,
-				AC66409E220A411B00C95B6E /* ImageEditorPresenter.swift */,
-				AC6640A6220B7A7500C95B6E /* ImageEditorViewState.swift */,
 				AC66409C220A231000C95B6E /* Meme.swift */,
-				AC6640A0220A485700C95B6E /* UserText.swift */,
 				AC6640AB220B8DA200C95B6E /* Asset.xcassets */,
 				AC6640892206E1A300C95B6E /* LaunchScreen.storyboard */,
 				AC66408C2206E1A300C95B6E /* Info.plist */,
@@ -100,6 +92,38 @@
 				AC6640A9220B8CC700C95B6E /* Theme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		ACFE040A22248307005DCE14 /* Image Editor */ = {
+			isa = PBXGroup;
+			children = (
+				AC6640B5220DF42600C95B6E /* ImageEditorViewController.xib */,
+				AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */,
+				AC66409A22078EB500C95B6E /* KeyboardSlide.swift */,
+				AC6640AF220CB8A000C95B6E /* ImageEditorRouterFactory.swift */,
+				AC664092220774BA00C95B6E /* ImageEditorRouter.swift */,
+				AC6640AD220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift */,
+				AC6640942207753200C95B6E /* ImageEditorInteractor.swift */,
+				AC66409E220A411B00C95B6E /* ImageEditorPresenter.swift */,
+				AC6640A6220B7A7500C95B6E /* ImageEditorViewState.swift */,
+				AC6640A0220A485700C95B6E /* UserText.swift */,
+			);
+			path = "Image Editor";
+			sourceTree = "<group>";
+		};
+		ACFE040B22248588005DCE14 /* Shared Images */ = {
+			isa = PBXGroup;
+			children = (
+				ACFE040C222485D8005DCE14 /* Table View */,
+			);
+			path = "Shared Images";
+			sourceTree = "<group>";
+		};
+		ACFE040C222485D8005DCE14 /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Table View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
