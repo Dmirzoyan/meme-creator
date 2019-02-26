@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
-        let router = ImageEditorRouterFactory(navigationController: navigationController).make()
-        router.start()
+        let mainTabBarRouter = MainTabBarRouterFactory(navigationController: navigationController).make()
+        mainTabBarRouter.start()
         
         return true
     }

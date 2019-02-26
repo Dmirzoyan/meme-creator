@@ -1,5 +1,5 @@
 //
-//  SharedImagesListRouter.swift
+//  SharedImagesGridRouter.swift
 //  MemeMe
 //
 //  Created by Davit Mirzoyan on 2/26/19.
@@ -8,28 +8,28 @@
 
 import UIKit
 
-protocol SharedImagesListRoute {
+protocol SharedImagesGridRoute {
     func start() -> UIViewController
 }
 
-protocol SharedImagesListInternalRoute {}
+protocol SharedImagesGridInternalRoute {}
 
-final class SharedImagesListRouter: SharedImagesListRoute {
+final class SharedImagesGridRouter: SharedImagesGridRoute {
     
     private let navigationController: UINavigationController
-    private let displayFactory: SharedImagesListDisplayProducing
+    private let displayFactory: SharedImagesGridDisplayProducing
     
     init(
         navigationController: UINavigationController,
-        displayFactory: SharedImagesListDisplayProducing
+        displayFactory: SharedImagesGridDisplayProducing
     ) {
         self.navigationController = navigationController
         self.displayFactory =  displayFactory
     }
     
     func start() -> UIViewController {
-        return  displayFactory.make(router: self)
+        return displayFactory.make(router: self)
     }
 }
 
-extension SharedImagesListRouter: SharedImagesListInternalRoute {}
+extension SharedImagesGridRouter: SharedImagesGridInternalRoute {}

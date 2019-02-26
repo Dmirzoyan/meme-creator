@@ -29,6 +29,19 @@
 		ACFE04442225C3A3005DCE14 /* SharedImagesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE043D2225C3A3005DCE14 /* SharedImagesListRouter.swift */; };
 		ACFE04452225C3A3005DCE14 /* SharedImagesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE043E2225C3A3005DCE14 /* SharedImagesListPresenter.swift */; };
 		ACFE04462225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE043F2225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift */; };
+		ACFE046B2225CBEC005DCE14 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04642225CBEC005DCE14 /* MainTabBarViewController.swift */; };
+		ACFE046D2225CBEC005DCE14 /* MainTabBarRouterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04662225CBEC005DCE14 /* MainTabBarRouterFactory.swift */; };
+		ACFE046E2225CBEC005DCE14 /* MainTabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04672225CBEC005DCE14 /* MainTabBarInteractor.swift */; };
+		ACFE046F2225CBEC005DCE14 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04682225CBEC005DCE14 /* MainTabBarRouter.swift */; };
+		ACFE04702225CBEC005DCE14 /* MainTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04692225CBEC005DCE14 /* MainTabBarPresenter.swift */; };
+		ACFE04712225CBEC005DCE14 /* MainTabBarDisplayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE046A2225CBEC005DCE14 /* MainTabBarDisplayFactory.swift */; };
+		ACFE047A2225D128005DCE14 /* SharedImagesGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04732225D128005DCE14 /* SharedImagesGridViewController.swift */; };
+		ACFE047B2225D128005DCE14 /* SharedImagesGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACFE04742225D128005DCE14 /* SharedImagesGridViewController.xib */; };
+		ACFE047C2225D128005DCE14 /* SharedImagesGridRouterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04752225D128005DCE14 /* SharedImagesGridRouterFactory.swift */; };
+		ACFE047D2225D128005DCE14 /* SharedImagesGridInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04762225D128005DCE14 /* SharedImagesGridInteractor.swift */; };
+		ACFE047E2225D128005DCE14 /* SharedImagesGridRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04772225D128005DCE14 /* SharedImagesGridRouter.swift */; };
+		ACFE047F2225D128005DCE14 /* SharedImagesGridPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04782225D128005DCE14 /* SharedImagesGridPresenter.swift */; };
+		ACFE04802225D128005DCE14 /* SharedImagesGridDisplayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04792225D128005DCE14 /* SharedImagesGridDisplayFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +69,19 @@
 		ACFE043D2225C3A3005DCE14 /* SharedImagesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListRouter.swift; sourceTree = "<group>"; };
 		ACFE043E2225C3A3005DCE14 /* SharedImagesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListPresenter.swift; sourceTree = "<group>"; };
 		ACFE043F2225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListDisplayFactory.swift; sourceTree = "<group>"; };
+		ACFE04642225CBEC005DCE14 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		ACFE04662225CBEC005DCE14 /* MainTabBarRouterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouterFactory.swift; sourceTree = "<group>"; };
+		ACFE04672225CBEC005DCE14 /* MainTabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarInteractor.swift; sourceTree = "<group>"; };
+		ACFE04682225CBEC005DCE14 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
+		ACFE04692225CBEC005DCE14 /* MainTabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarPresenter.swift; sourceTree = "<group>"; };
+		ACFE046A2225CBEC005DCE14 /* MainTabBarDisplayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarDisplayFactory.swift; sourceTree = "<group>"; };
+		ACFE04732225D128005DCE14 /* SharedImagesGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridViewController.swift; sourceTree = "<group>"; };
+		ACFE04742225D128005DCE14 /* SharedImagesGridViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharedImagesGridViewController.xib; sourceTree = "<group>"; };
+		ACFE04752225D128005DCE14 /* SharedImagesGridRouterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridRouterFactory.swift; sourceTree = "<group>"; };
+		ACFE04762225D128005DCE14 /* SharedImagesGridInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridInteractor.swift; sourceTree = "<group>"; };
+		ACFE04772225D128005DCE14 /* SharedImagesGridRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridRouter.swift; sourceTree = "<group>"; };
+		ACFE04782225D128005DCE14 /* SharedImagesGridPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridPresenter.swift; sourceTree = "<group>"; };
+		ACFE04792225D128005DCE14 /* SharedImagesGridDisplayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridDisplayFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +114,7 @@
 		AC66407F2206E19F00C95B6E /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				ACFE04472225C4A4005DCE14 /* Tab Bar */,
 				ACFE040B22248588005DCE14 /* Shared Images */,
 				ACFE040A22248307005DCE14 /* Image Editor */,
 				AC6640A8220B8CB600C95B6E /* Theme */,
@@ -128,6 +155,7 @@
 		ACFE040B22248588005DCE14 /* Shared Images */ = {
 			isa = PBXGroup;
 			children = (
+				ACFE04722225D107005DCE14 /* Grid */,
 				ACFE040C222485D8005DCE14 /* List */,
 			);
 			path = "Shared Images";
@@ -145,6 +173,33 @@
 				ACFE043F2225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		ACFE04472225C4A4005DCE14 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				ACFE04642225CBEC005DCE14 /* MainTabBarViewController.swift */,
+				ACFE04662225CBEC005DCE14 /* MainTabBarRouterFactory.swift */,
+				ACFE04672225CBEC005DCE14 /* MainTabBarInteractor.swift */,
+				ACFE04682225CBEC005DCE14 /* MainTabBarRouter.swift */,
+				ACFE04692225CBEC005DCE14 /* MainTabBarPresenter.swift */,
+				ACFE046A2225CBEC005DCE14 /* MainTabBarDisplayFactory.swift */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		ACFE04722225D107005DCE14 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				ACFE04732225D128005DCE14 /* SharedImagesGridViewController.swift */,
+				ACFE04742225D128005DCE14 /* SharedImagesGridViewController.xib */,
+				ACFE04752225D128005DCE14 /* SharedImagesGridRouterFactory.swift */,
+				ACFE04762225D128005DCE14 /* SharedImagesGridInteractor.swift */,
+				ACFE04772225D128005DCE14 /* SharedImagesGridRouter.swift */,
+				ACFE04782225D128005DCE14 /* SharedImagesGridPresenter.swift */,
+				ACFE04792225D128005DCE14 /* SharedImagesGridDisplayFactory.swift */,
+			);
+			path = Grid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC6640AC220B8DA200C95B6E /* Asset.xcassets in Resources */,
+				ACFE047B2225D128005DCE14 /* SharedImagesGridViewController.xib in Resources */,
 				AC66408B2206E1A300C95B6E /* LaunchScreen.storyboard in Resources */,
 				AC6640B6220DF42600C95B6E /* ImageEditorViewController.xib in Resources */,
 				ACFE04412225C3A3005DCE14 /* SharedImagesListViewController.xib in Resources */,
@@ -219,24 +275,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACFE04712225CBEC005DCE14 /* MainTabBarDisplayFactory.swift in Sources */,
 				AC6640832206E19F00C95B6E /* ImageEditorViewController.swift in Sources */,
 				ACFE04442225C3A3005DCE14 /* SharedImagesListRouter.swift in Sources */,
+				ACFE046D2225CBEC005DCE14 /* MainTabBarRouterFactory.swift in Sources */,
 				AC664093220774BA00C95B6E /* ImageEditorRouter.swift in Sources */,
 				ACFE04402225C3A3005DCE14 /* SharedImagesListViewController.swift in Sources */,
 				AC66409D220A231000C95B6E /* Meme.swift in Sources */,
 				AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */,
+				ACFE047D2225D128005DCE14 /* SharedImagesGridInteractor.swift in Sources */,
+				ACFE046F2225CBEC005DCE14 /* MainTabBarRouter.swift in Sources */,
 				AC6640AE220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift in Sources */,
+				ACFE047E2225D128005DCE14 /* SharedImagesGridRouter.swift in Sources */,
+				ACFE046E2225CBEC005DCE14 /* MainTabBarInteractor.swift in Sources */,
 				ACFE04452225C3A3005DCE14 /* SharedImagesListPresenter.swift in Sources */,
 				ACFE04432225C3A3005DCE14 /* SharedImagesListInteractor.swift in Sources */,
+				ACFE047F2225D128005DCE14 /* SharedImagesGridPresenter.swift in Sources */,
 				AC6640A7220B7A7500C95B6E /* ImageEditorViewState.swift in Sources */,
 				ACFE04462225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift in Sources */,
+				ACFE046B2225CBEC005DCE14 /* MainTabBarViewController.swift in Sources */,
 				AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */,
 				ACFE04422225C3A3005DCE14 /* SharedImagesListRouterFactory.swift in Sources */,
 				AC6640A1220A485700C95B6E /* UserText.swift in Sources */,
 				AC6640B0220CB8A000C95B6E /* ImageEditorRouterFactory.swift in Sources */,
+				ACFE047C2225D128005DCE14 /* SharedImagesGridRouterFactory.swift in Sources */,
 				AC6640AA220B8CC700C95B6E /* Theme.swift in Sources */,
 				AC6640952207753200C95B6E /* ImageEditorInteractor.swift in Sources */,
+				ACFE047A2225D128005DCE14 /* SharedImagesGridViewController.swift in Sources */,
 				AC66409F220A411B00C95B6E /* ImageEditorPresenter.swift in Sources */,
+				ACFE04802225D128005DCE14 /* SharedImagesGridDisplayFactory.swift in Sources */,
+				ACFE04702225CBEC005DCE14 /* MainTabBarPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
