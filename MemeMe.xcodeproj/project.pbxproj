@@ -22,6 +22,13 @@
 		AC6640AE220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640AD220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift */; };
 		AC6640B0220CB8A000C95B6E /* ImageEditorRouterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640AF220CB8A000C95B6E /* ImageEditorRouterFactory.swift */; };
 		AC6640B6220DF42600C95B6E /* ImageEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6640B5220DF42600C95B6E /* ImageEditorViewController.xib */; };
+		ACFE04402225C3A3005DCE14 /* SharedImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04392225C3A3005DCE14 /* SharedImagesListViewController.swift */; };
+		ACFE04412225C3A3005DCE14 /* SharedImagesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACFE043A2225C3A3005DCE14 /* SharedImagesListViewController.xib */; };
+		ACFE04422225C3A3005DCE14 /* SharedImagesListRouterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE043B2225C3A3005DCE14 /* SharedImagesListRouterFactory.swift */; };
+		ACFE04432225C3A3005DCE14 /* SharedImagesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE043C2225C3A3005DCE14 /* SharedImagesListInteractor.swift */; };
+		ACFE04442225C3A3005DCE14 /* SharedImagesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE043D2225C3A3005DCE14 /* SharedImagesListRouter.swift */; };
+		ACFE04452225C3A3005DCE14 /* SharedImagesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE043E2225C3A3005DCE14 /* SharedImagesListPresenter.swift */; };
+		ACFE04462225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE043F2225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +49,13 @@
 		AC6640AD220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorDisplayFactory.swift; sourceTree = "<group>"; };
 		AC6640AF220CB8A000C95B6E /* ImageEditorRouterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorRouterFactory.swift; sourceTree = "<group>"; };
 		AC6640B5220DF42600C95B6E /* ImageEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageEditorViewController.xib; sourceTree = "<group>"; };
+		ACFE04392225C3A3005DCE14 /* SharedImagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListViewController.swift; sourceTree = "<group>"; };
+		ACFE043A2225C3A3005DCE14 /* SharedImagesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharedImagesListViewController.xib; sourceTree = "<group>"; };
+		ACFE043B2225C3A3005DCE14 /* SharedImagesListRouterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListRouterFactory.swift; sourceTree = "<group>"; };
+		ACFE043C2225C3A3005DCE14 /* SharedImagesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListInteractor.swift; sourceTree = "<group>"; };
+		ACFE043D2225C3A3005DCE14 /* SharedImagesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListRouter.swift; sourceTree = "<group>"; };
+		ACFE043E2225C3A3005DCE14 /* SharedImagesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListPresenter.swift; sourceTree = "<group>"; };
+		ACFE043F2225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListDisplayFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,16 +128,23 @@
 		ACFE040B22248588005DCE14 /* Shared Images */ = {
 			isa = PBXGroup;
 			children = (
-				ACFE040C222485D8005DCE14 /* Table View */,
+				ACFE040C222485D8005DCE14 /* List */,
 			);
 			path = "Shared Images";
 			sourceTree = "<group>";
 		};
-		ACFE040C222485D8005DCE14 /* Table View */ = {
+		ACFE040C222485D8005DCE14 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				ACFE04392225C3A3005DCE14 /* SharedImagesListViewController.swift */,
+				ACFE043A2225C3A3005DCE14 /* SharedImagesListViewController.xib */,
+				ACFE043B2225C3A3005DCE14 /* SharedImagesListRouterFactory.swift */,
+				ACFE043C2225C3A3005DCE14 /* SharedImagesListInteractor.swift */,
+				ACFE043D2225C3A3005DCE14 /* SharedImagesListRouter.swift */,
+				ACFE043E2225C3A3005DCE14 /* SharedImagesListPresenter.swift */,
+				ACFE043F2225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift */,
 			);
-			path = "Table View";
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +208,7 @@
 				AC6640AC220B8DA200C95B6E /* Asset.xcassets in Resources */,
 				AC66408B2206E1A300C95B6E /* LaunchScreen.storyboard in Resources */,
 				AC6640B6220DF42600C95B6E /* ImageEditorViewController.xib in Resources */,
+				ACFE04412225C3A3005DCE14 /* SharedImagesListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,12 +220,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC6640832206E19F00C95B6E /* ImageEditorViewController.swift in Sources */,
+				ACFE04442225C3A3005DCE14 /* SharedImagesListRouter.swift in Sources */,
 				AC664093220774BA00C95B6E /* ImageEditorRouter.swift in Sources */,
+				ACFE04402225C3A3005DCE14 /* SharedImagesListViewController.swift in Sources */,
 				AC66409D220A231000C95B6E /* Meme.swift in Sources */,
 				AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */,
 				AC6640AE220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift in Sources */,
+				ACFE04452225C3A3005DCE14 /* SharedImagesListPresenter.swift in Sources */,
+				ACFE04432225C3A3005DCE14 /* SharedImagesListInteractor.swift in Sources */,
 				AC6640A7220B7A7500C95B6E /* ImageEditorViewState.swift in Sources */,
+				ACFE04462225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift in Sources */,
 				AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */,
+				ACFE04422225C3A3005DCE14 /* SharedImagesListRouterFactory.swift in Sources */,
 				AC6640A1220A485700C95B6E /* UserText.swift in Sources */,
 				AC6640B0220CB8A000C95B6E /* ImageEditorRouterFactory.swift in Sources */,
 				AC6640AA220B8CC700C95B6E /* Theme.swift in Sources */,
