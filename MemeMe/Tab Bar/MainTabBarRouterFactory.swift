@@ -21,18 +21,9 @@ final class MainTabBarRouterFactory: MainTabBarRouterProducing {
     }
     
     func make() -> MainTabBarRoute {
-        let sharedImagesListRouter = SharedImagesListRouterFactory(navigationController: navigationController).make()
-        let sharedImagesListViewController = sharedImagesListRouter.start()
-        
-        let sharedImagesGridRouter = SharedImagesGridRouterFactory(navigationController: navigationController).make()
-        let sharedImagesGridViewController = sharedImagesGridRouter.start()
-        
         return MainTabBarRouter(
             navigationController: navigationController,
-            displayFactory: MainTabBarDisplayFactory(
-                sharedImagesListViewController: sharedImagesListViewController as! SharedImagesListViewController,
-                sharedImagesGridViewController: sharedImagesGridViewController as! SharedImagesGridViewController
-            )
+            displayFactory: MainTabBarDisplayFactory()
         )
     }
 }

@@ -14,25 +14,36 @@ protocol MainTabBarDisplayProducing {
 
 final class MainTabBarDisplayFactory: MainTabBarDisplayProducing {
     
-    private let sharedImagesListViewController: SharedImagesListViewController
-    private let sharedImagesGridViewController: SharedImagesGridViewController
-    
-    init(
-        sharedImagesListViewController: SharedImagesListViewController,
-        sharedImagesGridViewController: SharedImagesGridViewController
-    ) {
-        self.sharedImagesListViewController = sharedImagesListViewController
-        self.sharedImagesGridViewController = sharedImagesGridViewController
-    }
-    
     func make(router: MainTabBarInternalRoute) -> UIViewController {
         let viewController = MainTabBarViewController()
         
-        sharedImagesListViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 0)
-        sharedImagesGridViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
-        
-        viewController.viewControllers = [sharedImagesListViewController, sharedImagesGridViewController]
+        viewController.viewControllers = [
+            sharedImageListNavigationController(),
+            sharedImageGridNavigationController()
+        ]
         
         return viewController
+    }
+    
+    private func sharedImageListNavigationController() -> UINavigationController {
+        let navigationController = UINavigationController()
+        let router = SharedImagesListRouterFactory(navigationController: navigationController).make()
+        let viewController = router.start()
+        
+        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 0)
+        navigationController.viewControllers = [viewController]
+        
+        return navigationController
+    }
+    
+    private func sharedImageGridNavigationController() -> UINavigationController {
+        let navigationController = UINavigationController()
+        let router = SharedImagesGridRouterFactory(navigationController: navigationController).make()
+        let viewController = router.start()
+        
+        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        navigationController.viewControllers = [viewController]
+        
+        return navigationController
     }
 }

@@ -22,4 +22,8 @@ final class SharedImagesListInteractor: SharedImagesListInteracting {
         self.router = router
         self.presenter = presenter
     }
+    
+    func goToImageEditor() {
+        router.goToImageEditor()
+    }
 }

@@ -29,7 +29,7 @@ final class MainTabBarRouter: MainTabBarRoute {
     
     func start() {
         let viewController = displayFactory.make(router: self)
-        navigationController.pushViewController(viewController, animated: true)
+        navigationController.present(viewController, animated: false, completion: nil)
     }
 }
 

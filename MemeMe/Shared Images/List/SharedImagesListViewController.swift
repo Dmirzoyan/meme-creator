@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol SharedImagesListInteracting {}
+protocol SharedImagesListInteracting {
+    func goToImageEditor()
+}
 
 final class SharedImagesListViewController: UIViewController {
 
@@ -17,7 +19,21 @@ final class SharedImagesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addCreateImageButton()
         view.backgroundColor = .gray
+    }
+    
+    private func addCreateImageButton() {
+        let createImageButton = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(createImageButtonTaped(_:))
+        )
+        navigationItem.rightBarButtonItem = createImageButton
+    }
+    
+    @objc private func createImageButtonTaped(_ sender: Any) {
+        interactor.goToImageEditor()
     }
 }
 

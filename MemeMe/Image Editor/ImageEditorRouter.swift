@@ -44,7 +44,7 @@ final class ImageEditorRouter: ImageEditorRouting {
         guard let viewController = viewController
         else { return }
         
-        navigationController.pushViewController(viewController, animated: true)
+        navigationController.present(viewController, animated: true, completion: nil)
     }
 }
 

@@ -138,9 +138,9 @@
 		ACFE040A22248307005DCE14 /* Image Editor */ = {
 			isa = PBXGroup;
 			children = (
-				AC6640B5220DF42600C95B6E /* ImageEditorViewController.xib */,
 				AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */,
 				AC66409A22078EB500C95B6E /* KeyboardSlide.swift */,
+				AC6640B5220DF42600C95B6E /* ImageEditorViewController.xib */,
 				AC6640AF220CB8A000C95B6E /* ImageEditorRouterFactory.swift */,
 				AC664092220774BA00C95B6E /* ImageEditorRouter.swift */,
 				AC6640AD220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift */,

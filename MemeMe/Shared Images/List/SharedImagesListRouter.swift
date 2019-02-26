@@ -12,7 +12,9 @@ protocol SharedImagesListRoute {
     func start() -> UIViewController
 }
 
-protocol SharedImagesListInternalRoute {}
+protocol SharedImagesListInternalRoute {
+    func goToImageEditor()
+}
 
 final class SharedImagesListRouter: SharedImagesListRoute {
     
@@ -27,9 +29,15 @@ final class SharedImagesListRouter: SharedImagesListRoute {
         self.displayFactory =  displayFactory
     }
     
-    func start() -> UIViewController {
-        return  displayFactory.make(router: self)
+    func start() -> UIViewController {        
+        return displayFactory.make(router: self)
     }
 }
 
-extension SharedImagesListRouter: SharedImagesListInternalRoute {}
+extension SharedImagesListRouter: SharedImagesListInternalRoute {
+    
+    func goToImageEditor() {
+        let imageEditorRouter = ImageEditorRouterFactory(navigationController: navigationController).make()
+        imageEditorRouter.start()
+    }
+}
