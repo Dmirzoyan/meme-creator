@@ -22,4 +22,8 @@ final class SharedImagesGridInteractor: SharedImagesGridInteracting {
         self.router = router
         self.presenter = presenter
     }
+    
+    func goToImageEditor() {
+        router.goToImageEditor()
+    }
 }

@@ -12,7 +12,9 @@ protocol SharedImagesGridRoute {
     func start() -> UIViewController
 }
 
-protocol SharedImagesGridInternalRoute {}
+protocol SharedImagesGridInternalRoute {
+    func goToImageEditor()
+}
 
 final class SharedImagesGridRouter: SharedImagesGridRoute {
     
@@ -32,4 +34,10 @@ final class SharedImagesGridRouter: SharedImagesGridRoute {
     }
 }
 
-extension SharedImagesGridRouter: SharedImagesGridInternalRoute {}
+extension SharedImagesGridRouter: SharedImagesGridInternalRoute {
+    
+    func goToImageEditor() {
+        let imageEditorRouter = ImageEditorRouterFactory(navigationController: navigationController).make()
+        imageEditorRouter.start()
+    }
+}

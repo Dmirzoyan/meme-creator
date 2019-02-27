@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol SharedImagesGridInteracting {}
+protocol SharedImagesGridInteracting {
+    func goToImageEditor()
+}
 
 final class SharedImagesGridViewController: UIViewController {
 
@@ -17,7 +19,39 @@ final class SharedImagesGridViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
+        applyStyle()
+        addCreateImageButton()
+    }
+    
+    private func applyStyle() {
+        view.backgroundColor = UIColor.AppTheme.darkGrey
+        applyNavigationBarStyle()
+    }
+    
+    private func applyNavigationBarStyle() {
+        guard let navigationBar = navigationController?.navigationBar
+            else { return }
+        
+        navigationBar.barStyle = .blackTranslucent
+        navigationBar.barTintColor = UIColor.AppTheme.darkGrey
+    }
+    
+    private func addCreateImageButton() {
+        let createImageButton = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(createImageButtonTaped(_:))
+        )
+        createImageButton.tintColor = .white
+        navigationItem.rightBarButtonItem = createImageButton
+    }
+    
+    @objc private func createImageButtonTaped(_ sender: Any) {
+        interactor.goToImageEditor()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
