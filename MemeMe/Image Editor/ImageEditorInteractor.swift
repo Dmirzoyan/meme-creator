@@ -9,7 +9,6 @@
 import UIKit
 
 protocol ImageEditorPresenting {
-    
     func presentInitialView()
     func present(_ image: UIImage)
 }
@@ -18,8 +17,8 @@ final class ImageEditorInteractor: ImageEditorInteracting {
     
     private let router: ImageEditorInternalRouting
     private let presenter: ImageEditorPresenting
-    private var originalImage: UIImage?
-    private var userText: UserText?
+    private var originalImage = UIImage()
+    private var userText = UserText(top: "TOP", bottom: "BOTTOM")
     
     init(router: ImageEditorInternalRouting, presenter: ImageEditorPresenting) {
         self.router = router
@@ -42,8 +41,8 @@ final class ImageEditorInteractor: ImageEditorInteracting {
     }
     
     func save(_ userText: UserText) {
-        self.userText?.top = userText.top
-        self.userText?.bottom = userText.bottom
+        self.userText.top = userText.top
+        self.userText.bottom = userText.bottom
     }
     
     func share(_ image: UIImage) {
@@ -65,11 +64,13 @@ final class ImageEditorInteractor: ImageEditorInteracting {
     }
     
     private func saveMeme(editedImage: UIImage) {
-        let meme = Meme(
-            topText: userText?.top,
-            bottomText: userText?.bottom,
-            originalImage: originalImage,
-            editedImage: editedImage
+        Dependencies.imageStorageManager.save(
+            Meme(
+                topText: userText.top,
+                bottomText: userText.bottom,
+                originalImage: originalImage,
+                editedImage: editedImage
+            )
         )
     }
 }

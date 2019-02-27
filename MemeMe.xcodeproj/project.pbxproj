@@ -40,6 +40,9 @@
 		ACFE047E2225D128005DCE14 /* SharedImagesGridRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04772225D128005DCE14 /* SharedImagesGridRouter.swift */; };
 		ACFE047F2225D128005DCE14 /* SharedImagesGridPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04782225D128005DCE14 /* SharedImagesGridPresenter.swift */; };
 		ACFE04802225D128005DCE14 /* SharedImagesGridDisplayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04792225D128005DCE14 /* SharedImagesGridDisplayFactory.swift */; };
+		ACFE04832227201B005DCE14 /* ImageStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04822227201B005DCE14 /* ImageStorageManager.swift */; };
+		ACFE0486222724A0005DCE14 /* ImageStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACFE0484222724A0005DCE14 /* ImageStore.xcdatamodeld */; };
+		ACFE04AA22273DC7005DCE14 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE04A922273DC7005DCE14 /* Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		ACFE04772225D128005DCE14 /* SharedImagesGridRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridRouter.swift; sourceTree = "<group>"; };
 		ACFE04782225D128005DCE14 /* SharedImagesGridPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridPresenter.swift; sourceTree = "<group>"; };
 		ACFE04792225D128005DCE14 /* SharedImagesGridDisplayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridDisplayFactory.swift; sourceTree = "<group>"; };
+		ACFE04822227201B005DCE14 /* ImageStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorageManager.swift; sourceTree = "<group>"; };
+		ACFE0485222724A0005DCE14 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		ACFE04A922273DC7005DCE14 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,15 +116,17 @@
 		AC66407F2206E19F00C95B6E /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				ACFE04A822273DA8005DCE14 /* Dependencies */,
+				ACFE048122271FEF005DCE14 /* Image Storage Manager */,
 				ACFE04472225C4A4005DCE14 /* Tab Bar */,
 				ACFE040B22248588005DCE14 /* Shared Images */,
 				ACFE040A22248307005DCE14 /* Image Editor */,
 				AC6640A8220B8CB600C95B6E /* Theme */,
 				AC6640802206E19F00C95B6E /* AppDelegate.swift */,
-				AC66409C220A231000C95B6E /* Meme.swift */,
 				AC6640AB220B8DA200C95B6E /* Asset.xcassets */,
 				AC6640892206E1A300C95B6E /* LaunchScreen.storyboard */,
 				AC66408C2206E1A300C95B6E /* Info.plist */,
+				ACFE0484222724A0005DCE14 /* ImageStore.xcdatamodeld */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -194,6 +202,23 @@
 				ACFE04792225D128005DCE14 /* SharedImagesGridDisplayFactory.swift */,
 			);
 			path = Grid;
+			sourceTree = "<group>";
+		};
+		ACFE048122271FEF005DCE14 /* Image Storage Manager */ = {
+			isa = PBXGroup;
+			children = (
+				ACFE04822227201B005DCE14 /* ImageStorageManager.swift */,
+				AC66409C220A231000C95B6E /* Meme.swift */,
+			);
+			path = "Image Storage Manager";
+			sourceTree = "<group>";
+		};
+		ACFE04A822273DA8005DCE14 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				ACFE04A922273DC7005DCE14 /* Dependencies.swift */,
+			);
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +297,7 @@
 				ACFE04712225CBEC005DCE14 /* MainTabBarDisplayFactory.swift in Sources */,
 				AC6640832206E19F00C95B6E /* ImageEditorViewController.swift in Sources */,
 				ACFE04442225C3A3005DCE14 /* SharedImagesListRouter.swift in Sources */,
+				ACFE04832227201B005DCE14 /* ImageStorageManager.swift in Sources */,
 				ACFE046D2225CBEC005DCE14 /* MainTabBarRouterFactory.swift in Sources */,
 				AC664093220774BA00C95B6E /* ImageEditorRouter.swift in Sources */,
 				ACFE04402225C3A3005DCE14 /* SharedImagesListViewController.swift in Sources */,
@@ -285,6 +311,7 @@
 				ACFE04432225C3A3005DCE14 /* SharedImagesListInteractor.swift in Sources */,
 				ACFE047F2225D128005DCE14 /* SharedImagesGridPresenter.swift in Sources */,
 				AC6640A7220B7A7500C95B6E /* ImageEditorViewState.swift in Sources */,
+				ACFE0486222724A0005DCE14 /* ImageStore.xcdatamodeld in Sources */,
 				ACFE04462225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift in Sources */,
 				ACFE046B2225CBEC005DCE14 /* MainTabBarViewController.swift in Sources */,
 				AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */,
@@ -297,6 +324,7 @@
 				ACFE047A2225D128005DCE14 /* SharedImagesGridViewController.swift in Sources */,
 				AC66409F220A411B00C95B6E /* ImageEditorPresenter.swift in Sources */,
 				ACFE04802225D128005DCE14 /* SharedImagesGridDisplayFactory.swift in Sources */,
+				ACFE04AA22273DC7005DCE14 /* Dependencies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +516,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ACFE0484222724A0005DCE14 /* ImageStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ACFE0485222724A0005DCE14 /* Model.xcdatamodel */,
+			);
+			currentVersion = ACFE0485222724A0005DCE14 /* Model.xcdatamodel */;
+			path = ImageStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AC6640752206E19F00C95B6E /* Project object */;
 }

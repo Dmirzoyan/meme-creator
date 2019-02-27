@@ -7,8 +7,7 @@
 //
 
 struct UserText {
-    
-    var top: String?
-    var bottom: String?
+    var top: String
+    var bottom: String
 }
 

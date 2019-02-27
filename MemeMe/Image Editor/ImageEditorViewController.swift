@@ -144,7 +144,12 @@ extension ImageEditorViewController {
     
     @objc private func share(_ sender: Any) {
         if let image = generateEditedImage() {
-            interactor.save(UserText(top: topTextField.text, bottom: bottomTextField.text))
+            interactor.save(
+                UserText(
+                    top: topTextField.text ?? "",
+                    bottom: bottomTextField.text ?? ""
+                )
+            )
             interactor.share(image)
         }
     }
