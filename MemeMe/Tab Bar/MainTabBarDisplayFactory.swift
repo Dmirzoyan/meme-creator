@@ -9,12 +9,12 @@
 import UIKit
 
 protocol MainTabBarDisplayProducing {
-    func make(router: MainTabBarInternalRoute) -> UIViewController
+    func make() -> UIViewController
 }
 
 final class MainTabBarDisplayFactory: MainTabBarDisplayProducing {
     
-    func make(router: MainTabBarInternalRoute) -> UIViewController {
+    func make() -> UIViewController {
         let viewController = MainTabBarViewController()
         
         viewController.viewControllers = [

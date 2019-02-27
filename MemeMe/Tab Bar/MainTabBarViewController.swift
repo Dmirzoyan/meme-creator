@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol MainTabBarInteracting {}
-
 final class MainTabBarViewController: UITabBarController {
-
-    var interactor: MainTabBarInteracting!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +21,3 @@ final class MainTabBarViewController: UITabBarController {
         tabBar.barTintColor = UIColor.AppTheme.darkGrey
     }
 }
-
-extension MainTabBarViewController: MainTabBarDisplaying {}

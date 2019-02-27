@@ -28,9 +28,7 @@ final class MainTabBarRouter: MainTabBarRoute {
     }
     
     func start() {
-        let viewController = displayFactory.make(router: self)
+        let viewController = displayFactory.make()
         navigationController.present(viewController, animated: false, completion: nil)
     }
 }
-
-extension MainTabBarRouter: MainTabBarInternalRoute {}
