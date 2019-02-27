@@ -53,7 +53,9 @@
                                 <action selector="selectAnImageFromLibrary:" destination="-1" id="sJV-y2-lld"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="kJg-tD-qOv"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="qCT-GE-Rab"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="gA3-Vf-Wv0"/>
                         <barButtonItem title="Camera" image="camera" style="plain" id="k68-k7-0du">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
