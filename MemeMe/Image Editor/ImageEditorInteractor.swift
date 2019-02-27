@@ -12,7 +12,6 @@ protocol ImageEditorPresenting {
     
     func presentInitialView()
     func present(_ image: UIImage)
-    func clearImage()
 }
 
 final class ImageEditorInteractor: ImageEditorInteracting {
@@ -51,7 +50,7 @@ final class ImageEditorInteractor: ImageEditorInteracting {
         router.share(image) { [weak self] success in
             if success {
                 self?.saveMeme(editedImage: image)
-                self?.presenter.clearImage()
+                self?.router.dismiss()
             }
         }
     }
@@ -61,8 +60,8 @@ final class ImageEditorInteractor: ImageEditorInteracting {
         presenter.present(image)
     }
     
-    func clearImage() {
-        presenter.clearImage()
+    func dismiss() {
+        router.dismiss()
     }
     
     private func saveMeme(editedImage: UIImage) {

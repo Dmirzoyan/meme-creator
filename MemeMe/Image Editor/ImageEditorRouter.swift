@@ -22,6 +22,7 @@ protocol ImageEditorInternalRouting {
     )
     func closeImagePicker()
     func share(_ image: UIImage, completion: @escaping ShareCompletion)
+    func dismiss()
 }
 
 final class ImageEditorRouter: ImageEditorRouting {
@@ -44,7 +45,8 @@ final class ImageEditorRouter: ImageEditorRouting {
         guard let viewController = viewController
         else { return }
         
-        navigationController.present(viewController, animated: true, completion: nil)
+        let navigationControllerWrapper = UINavigationController(rootViewController: viewController)
+        navigationController.present(navigationControllerWrapper, animated: true, completion: nil)
     }
 }
 
@@ -73,5 +75,9 @@ extension ImageEditorRouter: ImageEditorInternalRouting {
         }
         
         viewController?.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func dismiss() {
+        viewController?.dismiss(animated: true, completion: nil)
     }
 }

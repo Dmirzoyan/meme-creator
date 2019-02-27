@@ -19,7 +19,7 @@ protocol ImageEditorInteracting {
     func share(_ image: UIImage)
     func save(_ userText: UserText)
     func setSelected(_ image: UIImage)
-    func clearImage()
+    func dismiss()
 }
 
 final class ImageEditorViewController: UIViewController {
@@ -93,7 +93,7 @@ final class ImageEditorViewController: UIViewController {
         let shareButton = UIBarButtonItem(
             barButtonSystemItem: .action,
             target: self,
-            action: #selector(share)
+            action: #selector(share(_:))
         )
         shareButton.tintColor = .white
         navigationItem.leftBarButtonItem = shareButton
@@ -103,7 +103,7 @@ final class ImageEditorViewController: UIViewController {
         let cancelButton = UIBarButtonItem(
             barButtonSystemItem: .cancel,
             target: self,
-            action: #selector(cancel)
+            action: #selector(cancel(_:))
         )
         cancelButton.tintColor = .white
         navigationItem.rightBarButtonItem = cancelButton
@@ -138,18 +138,18 @@ extension ImageEditorViewController: UITextFieldDelegate {
 
 extension ImageEditorViewController {
     
-    @objc func share() {
+    @objc private func share(_ sender: Any) {
         if let image = generateEditedImage() {
             interactor.save(UserText(top: topTextField.text, bottom: bottomTextField.text))
             interactor.share(image)
         }
     }
     
-    @objc func cancel() {
-        interactor.clearImage()
+    @objc private func cancel(_ sender: Any) {
+        interactor.dismiss()
     }
     
-    func generateEditedImage() -> UIImage? {
+    private func generateEditedImage() -> UIImage? {
         toolbar.isHidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
