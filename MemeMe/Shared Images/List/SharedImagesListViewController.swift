@@ -19,8 +19,21 @@ final class SharedImagesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        applyStyle()
         addCreateImageButton()
-        view.backgroundColor = .gray
+    }
+    
+    private func applyStyle() {
+        view.backgroundColor = UIColor.AppTheme.darkGrey
+        applyNavigationBarStyle()
+    }
+    
+    private func applyNavigationBarStyle() {
+        guard let navigationBar = navigationController?.navigationBar
+        else { return }
+        
+        navigationBar.barStyle = .blackTranslucent
+        navigationBar.barTintColor = UIColor.AppTheme.darkGrey
     }
     
     private func addCreateImageButton() {
@@ -29,6 +42,7 @@ final class SharedImagesListViewController: UIViewController {
             target: self,
             action: #selector(createImageButtonTaped(_:))
         )
+        createImageButton.tintColor = .white
         navigationItem.rightBarButtonItem = createImageButton
     }
     
