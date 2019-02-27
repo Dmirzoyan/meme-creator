@@ -32,6 +32,7 @@ final class SharedImagesListViewController: UIViewController {
         guard let navigationBar = navigationController?.navigationBar
         else { return }
         
+        navigationBar.barStyle = .blackTranslucent
         navigationBar.barTintColor = UIColor.AppTheme.darkGrey
     }
     
@@ -47,6 +48,10 @@ final class SharedImagesListViewController: UIViewController {
     
     @objc private func createImageButtonTaped(_ sender: Any) {
         interactor.goToImageEditor()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 

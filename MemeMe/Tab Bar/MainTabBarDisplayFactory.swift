@@ -30,7 +30,7 @@ final class MainTabBarDisplayFactory: MainTabBarDisplayProducing {
         let router = SharedImagesListRouterFactory(navigationController: navigationController).make()
         let viewController = router.start()
         
-        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 0)
+        viewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "list"), tag: 0)
         navigationController.viewControllers = [viewController]
         
         return navigationController
@@ -41,7 +41,7 @@ final class MainTabBarDisplayFactory: MainTabBarDisplayProducing {
         let router = SharedImagesGridRouterFactory(navigationController: navigationController).make()
         let viewController = router.start()
         
-        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        viewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "grid"), tag: 1)
         navigationController.viewControllers = [viewController]
         
         return navigationController

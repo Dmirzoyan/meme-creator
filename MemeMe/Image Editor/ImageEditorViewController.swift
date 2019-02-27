@@ -74,6 +74,7 @@ final class ImageEditorViewController: UIViewController {
         guard let navigationBar = navigationController?.navigationBar
         else { return }
         
+        navigationBar.barStyle = .blackTranslucent
         navigationBar.barTintColor = UIColor.AppTheme.darkGrey
     }
     
@@ -118,6 +119,10 @@ final class ImageEditorViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 

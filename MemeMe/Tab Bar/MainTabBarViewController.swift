@@ -21,6 +21,7 @@ final class MainTabBarViewController: UITabBarController {
     }
     
     private func applyStyle() {
+        tabBar.tintColor = .white
         tabBar.barTintColor = UIColor.AppTheme.darkGrey
     }
 }
