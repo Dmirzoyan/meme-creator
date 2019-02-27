@@ -32,7 +32,6 @@ final class SharedImagesListViewController: UIViewController {
         guard let navigationBar = navigationController?.navigationBar
         else { return }
         
-        navigationBar.barStyle = .blackTranslucent
         navigationBar.barTintColor = UIColor.AppTheme.darkGrey
     }
     

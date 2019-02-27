@@ -16,6 +16,12 @@ final class MainTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        applyStyle()
+    }
+    
+    private func applyStyle() {
+        tabBar.barTintColor = UIColor.AppTheme.darkGrey
     }
 }
 
