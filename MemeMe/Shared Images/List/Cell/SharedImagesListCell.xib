@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" rowHeight="128" id="WDJ-kH-9V2" customClass="SharedImagesListCell" customModule="MemeMe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="128"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WDJ-kH-9V2" id="Izj-8t-yCZ">
+                <rect key="frame" x="0.0" y="0.0" width="481" height="127.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vp2-Zy-JIq">
+                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="127.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Vp2-Zy-JIq" secondAttribute="height" multiplier="1:1" id="bJi-3q-8c3"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Vp2-Zy-JIq" firstAttribute="top" secondItem="Izj-8t-yCZ" secondAttribute="top" id="Ayg-HH-NCo"/>
+                    <constraint firstItem="Vp2-Zy-JIq" firstAttribute="centerY" secondItem="Izj-8t-yCZ" secondAttribute="centerY" id="C48-MB-gsL"/>
+                    <constraint firstItem="Vp2-Zy-JIq" firstAttribute="leading" secondItem="Izj-8t-yCZ" secondAttribute="leading" id="CS7-9l-YW0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="sharedImageView" destination="Vp2-Zy-JIq" id="bUX-SF-h6W"/>
+            </connections>
+            <point key="canvasLocation" x="360.80000000000001" y="226.6866566716642"/>
+        </tableViewCell>
+    </objects>
+</document>

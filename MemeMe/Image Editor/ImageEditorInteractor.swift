@@ -17,12 +17,18 @@ final class ImageEditorInteractor: ImageEditorInteracting {
     
     private let router: ImageEditorInternalRouting
     private let presenter: ImageEditorPresenting
+    private let storageManager: ImageStorageManaging
     private var originalImage = UIImage()
     private var userText = UserText(top: "TOP", bottom: "BOTTOM")
     
-    init(router: ImageEditorInternalRouting, presenter: ImageEditorPresenting) {
+    init(
+        router: ImageEditorInternalRouting,
+        presenter: ImageEditorPresenting,
+        storageManager: ImageStorageManaging
+    ) {
         self.router = router
         self.presenter = presenter
+        self.storageManager = storageManager
     }
     
     func setInitialView() {
@@ -64,7 +70,7 @@ final class ImageEditorInteractor: ImageEditorInteracting {
     }
     
     private func saveMeme(editedImage: UIImage) {
-        Dependencies.imageStorageManager.save(
+        storageManager.store(
             Meme(
                 topText: userText.top,
                 bottomText: userText.bottom,

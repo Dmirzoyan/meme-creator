@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol SharedImagesListDisplaying {}
+protocol SharedImagesListDisplaying {
+    func display(_ sharedImages: [Meme])
+}
 
 final class SharedImagesListPresenter: SharedImagesListPresenting {
     
@@ -16,5 +18,9 @@ final class SharedImagesListPresenter: SharedImagesListPresenting {
     
     init(display: SharedImagesListDisplaying) {
         self.display = display
+    }
+    
+    func present(_ sharedImages: [Meme]) {
+        display.display(sharedImages)
     }
 }

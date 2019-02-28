@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SharedImagesListViewController">
             <connections>
+                <outlet property="tableView" destination="Vl9-RB-AYB" id="nVM-HM-OeW"/>
                 <outlet property="view" destination="xSV-jh-35U" id="zD4-6V-Oib"/>
             </connections>
         </placeholder>
@@ -19,7 +20,20 @@
         <view contentMode="scaleToFill" id="xSV-jh-35U">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vl9-RB-AYB">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="separatorInset" minX="125" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="w6s-yh-GLt" firstAttribute="bottom" secondItem="Vl9-RB-AYB" secondAttribute="bottom" id="BKC-2r-7SR"/>
+                <constraint firstItem="Vl9-RB-AYB" firstAttribute="top" secondItem="w6s-yh-GLt" secondAttribute="top" id="fyI-vq-Pqz"/>
+                <constraint firstItem="w6s-yh-GLt" firstAttribute="trailing" secondItem="Vl9-RB-AYB" secondAttribute="trailing" id="mj7-uI-XDs"/>
+                <constraint firstItem="Vl9-RB-AYB" firstAttribute="leading" secondItem="w6s-yh-GLt" secondAttribute="leading" id="uQO-bt-G6m"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="w6s-yh-GLt"/>
         </view>
     </objects>

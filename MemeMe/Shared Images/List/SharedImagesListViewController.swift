@@ -9,18 +9,31 @@
 import UIKit
 
 protocol SharedImagesListInteracting {
+    func loadImages()
     func goToImageEditor()
 }
 
 final class SharedImagesListViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var interactor: SharedImagesListInteracting!
+    var dataSource: SharedImagesListDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         applyStyle()
         addCreateImageButton()
+        setupTableView()
+        
+        interactor.loadImages()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
     
     private func applyStyle() {
@@ -46,6 +59,16 @@ final class SharedImagesListViewController: UIViewController {
         navigationItem.rightBarButtonItem = createImageButton
     }
     
+    private func setupTableView() {
+        let nib = UINib.init(nibName: "SharedImagesListCell", bundle: nil)
+        
+        tableView.register(nib, forCellReuseIdentifier: "SharedImagesListCell")
+        tableView.backgroundColor = UIColor.AppTheme.darkGrey
+        tableView.tableFooterView = UIView()
+        tableView.dataSource = dataSource
+        tableView.delegate = self
+    }
+    
     @objc private func createImageButtonTaped(_ sender: Any) {
         interactor.goToImageEditor()
     }
@@ -55,4 +78,16 @@ final class SharedImagesListViewController: UIViewController {
     }
 }
 
-extension SharedImagesListViewController: SharedImagesListDisplaying {}
+extension SharedImagesListViewController: SharedImagesListDisplaying {
+    
+    func display(_ sharedImages: [Meme]) {
+        dataSource.sharedImages = sharedImages
+    }
+}
+
+extension SharedImagesListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
+}

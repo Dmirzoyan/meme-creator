@@ -8,19 +8,28 @@
 
 import UIKit
 
-protocol SharedImagesListPresenting {}
+protocol SharedImagesListPresenting {
+    func present(_ sharedImages: [Meme])
+}
 
 final class SharedImagesListInteractor: SharedImagesListInteracting {
     
     private let router: SharedImagesListInternalRoute
     private let presenter: SharedImagesListPresenting
+    private let imagesProvider: ImagesProviding
     
     init(
         router: SharedImagesListInternalRoute,
-        presenter: SharedImagesListPresenting
+        presenter: SharedImagesListPresenting,
+        imagesProvider: ImagesProviding
     ) {
         self.router = router
         self.presenter = presenter
+        self.imagesProvider = imagesProvider
+    }
+    
+    func loadImages() {
+        presenter.present(imagesProvider.sharedImages)
     }
     
     func goToImageEditor() {

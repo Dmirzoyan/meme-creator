@@ -20,10 +20,12 @@ final class SharedImagesListDisplayFactory: SharedImagesListDisplayProducing {
         
         let interactor = SharedImagesListInteractor(
             router: router,
-            presenter: presenter
+            presenter: presenter,
+            imagesProvider: Dependencies.imageStorageManager
         )
         
         viewController.interactor = interactor
+        viewController.dataSource = SharedImagesListDataSource()
         
         return viewController
     }

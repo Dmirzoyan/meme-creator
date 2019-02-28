@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC16810522284E730012B378 /* SharedImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC16810422284E730012B378 /* SharedImagesListCell.swift */; };
+		AC168107222857DD0012B378 /* SharedImagesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC168106222857DD0012B378 /* SharedImagesListCell.xib */; };
+		AC168109222879500012B378 /* SharedImagesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168108222879500012B378 /* SharedImagesListDataSource.swift */; };
 		AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640802206E19F00C95B6E /* AppDelegate.swift */; };
 		AC6640832206E19F00C95B6E /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */; };
 		AC66408B2206E1A300C95B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6640892206E1A300C95B6E /* LaunchScreen.storyboard */; };
@@ -46,6 +49,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC16810422284E730012B378 /* SharedImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListCell.swift; sourceTree = "<group>"; };
+		AC168106222857DD0012B378 /* SharedImagesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharedImagesListCell.xib; sourceTree = "<group>"; };
+		AC168108222879500012B378 /* SharedImagesListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListDataSource.swift; sourceTree = "<group>"; };
 		AC66407D2206E19F00C95B6E /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6640802206E19F00C95B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +103,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC16810322284E5E0012B378 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AC16810422284E730012B378 /* SharedImagesListCell.swift */,
+				AC168106222857DD0012B378 /* SharedImagesListCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AC16810A222879620012B378 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				AC168108222879500012B378 /* SharedImagesListDataSource.swift */,
+			);
+			path = "Data Source";
+			sourceTree = "<group>";
+		};
 		AC6640742206E19F00C95B6E = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +191,8 @@
 		ACFE040C222485D8005DCE14 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				AC16810A222879620012B378 /* Data Source */,
+				AC16810322284E5E0012B378 /* Cell */,
 				ACFE04392225C3A3005DCE14 /* SharedImagesListViewController.swift */,
 				ACFE043A2225C3A3005DCE14 /* SharedImagesListViewController.xib */,
 				ACFE043B2225C3A3005DCE14 /* SharedImagesListRouterFactory.swift */,
@@ -279,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC168107222857DD0012B378 /* SharedImagesListCell.xib in Resources */,
 				AC6640AC220B8DA200C95B6E /* Asset.xcassets in Resources */,
 				ACFE047B2225D128005DCE14 /* SharedImagesGridViewController.xib in Resources */,
 				AC66408B2206E1A300C95B6E /* LaunchScreen.storyboard in Resources */,
@@ -318,12 +344,14 @@
 				ACFE04422225C3A3005DCE14 /* SharedImagesListRouterFactory.swift in Sources */,
 				AC6640A1220A485700C95B6E /* UserText.swift in Sources */,
 				AC6640B0220CB8A000C95B6E /* ImageEditorRouterFactory.swift in Sources */,
+				AC168109222879500012B378 /* SharedImagesListDataSource.swift in Sources */,
 				ACFE047C2225D128005DCE14 /* SharedImagesGridRouterFactory.swift in Sources */,
 				AC6640AA220B8CC700C95B6E /* Theme.swift in Sources */,
 				AC6640952207753200C95B6E /* ImageEditorInteractor.swift in Sources */,
 				ACFE047A2225D128005DCE14 /* SharedImagesGridViewController.swift in Sources */,
 				AC66409F220A411B00C95B6E /* ImageEditorPresenter.swift in Sources */,
 				ACFE04802225D128005DCE14 /* SharedImagesGridDisplayFactory.swift in Sources */,
+				AC16810522284E730012B378 /* SharedImagesListCell.swift in Sources */,
 				ACFE04AA22273DC7005DCE14 /* Dependencies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

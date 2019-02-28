@@ -20,7 +20,8 @@ final class ImageEditorDisplayFactory: ImageEditorDisplayProducing {
         
         let interactor = ImageEditorInteractor(
             router: router,
-            presenter: presenter
+            presenter: presenter,
+            storageManager: Dependencies.imageStorageManager
         )
         
         viewController.interactor = interactor
