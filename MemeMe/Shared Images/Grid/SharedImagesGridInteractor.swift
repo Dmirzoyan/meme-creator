@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SharedImagesGridPresenting {
-    func present(_ sharedimages: [UIImage])
+    func present(_ sharedimages: [Meme])
 }
 
 final class SharedImagesGridInteractor: SharedImagesGridInteracting {
@@ -29,9 +29,7 @@ final class SharedImagesGridInteractor: SharedImagesGridInteracting {
     }
     
     func loadImages() {
-        presenter.present(imagesProvider.sharedImages.map { meme -> UIImage in
-            return meme.editedImage
-        })
+        presenter.present(imagesProvider.sharedImages)
     }
     
     func goToImageEditor() {

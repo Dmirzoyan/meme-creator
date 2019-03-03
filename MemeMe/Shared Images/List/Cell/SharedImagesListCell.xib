@@ -24,20 +24,21 @@
                             <constraint firstAttribute="width" secondItem="Vp2-Zy-JIq" secondAttribute="height" multiplier="1:1" id="bJi-3q-8c3"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxO-HY-w7t">
-                        <rect key="frame" x="152.5" y="26" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kxO-HY-w7t">
+                        <rect key="frame" x="152.5" y="26" width="308.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIB-kb-OhM">
-                        <rect key="frame" x="152.5" y="81" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vIB-kb-OhM">
+                        <rect key="frame" x="152.5" y="81" width="308.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="kxO-HY-w7t" secondAttribute="trailing" id="0SX-Rh-kgq"/>
                     <constraint firstItem="Vp2-Zy-JIq" firstAttribute="top" secondItem="Izj-8t-yCZ" secondAttribute="top" id="Ayg-HH-NCo"/>
                     <constraint firstItem="Vp2-Zy-JIq" firstAttribute="centerY" secondItem="Izj-8t-yCZ" secondAttribute="centerY" id="C48-MB-gsL"/>
                     <constraint firstItem="Vp2-Zy-JIq" firstAttribute="leading" secondItem="Izj-8t-yCZ" secondAttribute="leading" id="CS7-9l-YW0"/>
@@ -45,6 +46,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="vIB-kb-OhM" secondAttribute="bottom" constant="15" id="GWh-gC-SfE"/>
                     <constraint firstItem="vIB-kb-OhM" firstAttribute="leading" secondItem="Vp2-Zy-JIq" secondAttribute="trailing" constant="25" id="eny-gK-Jhq"/>
                     <constraint firstItem="kxO-HY-w7t" firstAttribute="leading" secondItem="Vp2-Zy-JIq" secondAttribute="trailing" constant="25" id="mnI-8b-iWB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vIB-kb-OhM" secondAttribute="trailing" id="rsF-GT-BLk"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

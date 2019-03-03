@@ -30,6 +30,17 @@ final class SharedImagesGridViewController: UIViewController {
         interactor.loadImages()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 110, height: 110)
+        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 5
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        collectionView.collectionViewLayout = layout
+    }
+    
     private func applyStyle() {
         view.backgroundColor = UIColor.AppTheme.darkGrey
         applyNavigationBarStyle()
@@ -63,6 +74,7 @@ final class SharedImagesGridViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "SharedImagesGridCell")
         collectionView.backgroundColor = UIColor.AppTheme.darkGrey
         collectionView.dataSource = dataSource
+        collectionView.alwaysBounceVertical = true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -72,7 +84,7 @@ final class SharedImagesGridViewController: UIViewController {
 
 extension SharedImagesGridViewController: SharedImagesGridDisplaying {
     
-    func display(_ sharedImages: [UIImage]) {
+    func display(_ sharedImages: [Meme]) {
         dataSource.set(sharedImages)
     }
 }
