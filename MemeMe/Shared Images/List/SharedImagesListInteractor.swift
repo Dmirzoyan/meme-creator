@@ -10,6 +10,7 @@ import UIKit
 
 protocol SharedImagesListPresenting {
     func present(_ sharedImages: [Meme])
+    func reloadData()
 }
 
 final class SharedImagesListInteractor: SharedImagesListInteracting {
@@ -33,6 +34,14 @@ final class SharedImagesListInteractor: SharedImagesListInteracting {
     }
     
     func goToImageEditor() {
-        router.goToImageEditor()
+        router.goToImageEditor { [weak self] isImageShared in
+            guard
+                isImageShared,
+                let strongSelf = self
+            else { return }
+            
+            strongSelf.presenter.present(strongSelf.imagesProvider.sharedImages)
+            strongSelf.presenter.reloadData()
+        }
     }
 }

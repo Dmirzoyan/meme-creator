@@ -9,9 +9,10 @@
 import UIKit
 
 typealias ShareCompletion = (Bool) -> Void
+typealias ExitRoute = (Bool) -> Void
 
 protocol ImageEditorRouting {
-    func start()
+    func start(exitRoute: ExitRoute?)
 }
 
 protocol ImageEditorInternalRouting {
@@ -22,7 +23,7 @@ protocol ImageEditorInternalRouting {
     )
     func closeImagePicker()
     func share(_ image: UIImage, completion: @escaping ShareCompletion)
-    func dismiss()
+    func dismiss(isImageShared: Bool)
 }
 
 final class ImageEditorRouter: ImageEditorRouting {
@@ -30,6 +31,7 @@ final class ImageEditorRouter: ImageEditorRouting {
     private let navigationController: UINavigationController
     private let displayFactory: ImageEditorDisplayProducing
     private var viewController: UIViewController?
+    private var exitRoute: ExitRoute?
     
     init(
         navigationController: UINavigationController,
@@ -39,7 +41,8 @@ final class ImageEditorRouter: ImageEditorRouting {
         self.displayFactory =  displayFactory
     }
     
-    func start() {
+    func start(exitRoute: ExitRoute?) {
+        self.exitRoute = exitRoute
         viewController = displayFactory.make(router: self)
         
         guard let viewController = viewController
@@ -77,7 +80,8 @@ extension ImageEditorRouter: ImageEditorInternalRouting {
         viewController?.present(activityViewController, animated: true, completion: nil)
     }
     
-    func dismiss() {
+    func dismiss(isImageShared: Bool) {
+        exitRoute?(isImageShared)
         viewController?.dismiss(animated: true, completion: nil)
     }
 }

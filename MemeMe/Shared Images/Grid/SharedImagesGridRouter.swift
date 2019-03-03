@@ -38,6 +38,6 @@ extension SharedImagesGridRouter: SharedImagesGridInternalRoute {
     
     func goToImageEditor() {
         let imageEditorRouter = ImageEditorRouterFactory(navigationController: navigationController).make()
-        imageEditorRouter.start()
+        imageEditorRouter.start(exitRoute: nil)
     }
 }

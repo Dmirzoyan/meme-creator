@@ -83,6 +83,10 @@ extension SharedImagesListViewController: SharedImagesListDisplaying {
     func display(_ sharedImages: [Meme]) {
         dataSource.sharedImages = sharedImages
     }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
 }
 
 extension SharedImagesListViewController: UITableViewDelegate {

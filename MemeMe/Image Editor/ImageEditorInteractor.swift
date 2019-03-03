@@ -55,7 +55,7 @@ final class ImageEditorInteractor: ImageEditorInteracting {
         router.share(image) { [weak self] success in
             if success {
                 self?.saveMeme(editedImage: image)
-                self?.router.dismiss()
+                self?.router.dismiss(isImageShared: true)
             }
         }
     }
@@ -66,7 +66,7 @@ final class ImageEditorInteractor: ImageEditorInteracting {
     }
     
     func dismiss() {
-        router.dismiss()
+        router.dismiss(isImageShared: false)
     }
     
     private func saveMeme(editedImage: UIImage) {

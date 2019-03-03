@@ -8,12 +8,14 @@
 
 import UIKit
 
+typealias ImageEditorCompletion = (Bool) -> Void
+
 protocol SharedImagesListRoute {
     func start() -> UIViewController
 }
 
 protocol SharedImagesListInternalRoute {
-    func goToImageEditor()
+    func goToImageEditor(completion: @escaping ImageEditorCompletion)
 }
 
 final class SharedImagesListRouter: SharedImagesListRoute {
@@ -36,8 +38,8 @@ final class SharedImagesListRouter: SharedImagesListRoute {
 
 extension SharedImagesListRouter: SharedImagesListInternalRoute {
     
-    func goToImageEditor() {
+    func goToImageEditor(completion: @escaping ImageEditorCompletion) {
         let imageEditorRouter = ImageEditorRouterFactory(navigationController: navigationController).make()
-        imageEditorRouter.start()
+        imageEditorRouter.start(exitRoute: completion)
     }
 }
