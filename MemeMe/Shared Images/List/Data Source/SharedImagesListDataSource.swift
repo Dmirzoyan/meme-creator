@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol SharedImagesListDataProviding {
+    func set(_ images: [Meme])
+    func image(for indexPath: IndexPath) -> UIImage?
+}
+
 final class SharedImagesListDataSource: NSObject, UITableViewDataSource {
     
-    var sharedImages: [Meme]?
+    private var sharedImages: [Meme]?
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sharedImages?.count ?? 0
@@ -26,5 +31,16 @@ final class SharedImagesListDataSource: NSObject, UITableViewDataSource {
         cell.bottomLabel.text = sharedImages?[indexPath.row].bottomText
         
         return cell
+    }
+}
+
+extension SharedImagesListDataSource: SharedImagesListDataProviding {
+    
+    func set(_ images: [Meme]) {
+        sharedImages = images
+    }
+    
+    func image(for indexPath: IndexPath) -> UIImage? {
+        return sharedImages?[indexPath.row].editedImage
     }
 }

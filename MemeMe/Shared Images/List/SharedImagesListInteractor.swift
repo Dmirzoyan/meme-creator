@@ -44,4 +44,8 @@ final class SharedImagesListInteractor: SharedImagesListInteracting {
             strongSelf.presenter.reloadData()
         }
     }
+    
+    func goToImagePreview(for image: UIImage) {
+        router.goToImagePreview(for: image)
+    }
 }

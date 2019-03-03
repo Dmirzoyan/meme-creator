@@ -10,6 +10,13 @@
 		AC16810522284E730012B378 /* SharedImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC16810422284E730012B378 /* SharedImagesListCell.swift */; };
 		AC168107222857DD0012B378 /* SharedImagesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC168106222857DD0012B378 /* SharedImagesListCell.xib */; };
 		AC168109222879500012B378 /* SharedImagesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168108222879500012B378 /* SharedImagesListDataSource.swift */; };
+		AC168113222C4BBC0012B378 /* SharedImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC16810C222C4BBB0012B378 /* SharedImagePreviewViewController.swift */; };
+		AC168114222C4BBC0012B378 /* SharedImagePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC16810D222C4BBB0012B378 /* SharedImagePreviewViewController.xib */; };
+		AC168115222C4BBC0012B378 /* SharedImagePreviewRouterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC16810E222C4BBB0012B378 /* SharedImagePreviewRouterFactory.swift */; };
+		AC168116222C4BBC0012B378 /* SharedImagePreviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC16810F222C4BBB0012B378 /* SharedImagePreviewInteractor.swift */; };
+		AC168117222C4BBC0012B378 /* SharedImagePreviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168110222C4BBC0012B378 /* SharedImagePreviewRouter.swift */; };
+		AC168118222C4BBC0012B378 /* SharedImagePreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168111222C4BBC0012B378 /* SharedImagePreviewPresenter.swift */; };
+		AC168119222C4BBC0012B378 /* SharedImagePreviewDisplayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168112222C4BBC0012B378 /* SharedImagePreviewDisplayFactory.swift */; };
 		AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640802206E19F00C95B6E /* AppDelegate.swift */; };
 		AC6640832206E19F00C95B6E /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */; };
 		AC66408B2206E1A300C95B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6640892206E1A300C95B6E /* LaunchScreen.storyboard */; };
@@ -52,6 +59,13 @@
 		AC16810422284E730012B378 /* SharedImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListCell.swift; sourceTree = "<group>"; };
 		AC168106222857DD0012B378 /* SharedImagesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharedImagesListCell.xib; sourceTree = "<group>"; };
 		AC168108222879500012B378 /* SharedImagesListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesListDataSource.swift; sourceTree = "<group>"; };
+		AC16810C222C4BBB0012B378 /* SharedImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagePreviewViewController.swift; sourceTree = "<group>"; };
+		AC16810D222C4BBB0012B378 /* SharedImagePreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharedImagePreviewViewController.xib; sourceTree = "<group>"; };
+		AC16810E222C4BBB0012B378 /* SharedImagePreviewRouterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagePreviewRouterFactory.swift; sourceTree = "<group>"; };
+		AC16810F222C4BBB0012B378 /* SharedImagePreviewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagePreviewInteractor.swift; sourceTree = "<group>"; };
+		AC168110222C4BBC0012B378 /* SharedImagePreviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagePreviewRouter.swift; sourceTree = "<group>"; };
+		AC168111222C4BBC0012B378 /* SharedImagePreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagePreviewPresenter.swift; sourceTree = "<group>"; };
+		AC168112222C4BBC0012B378 /* SharedImagePreviewDisplayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagePreviewDisplayFactory.swift; sourceTree = "<group>"; };
 		AC66407D2206E19F00C95B6E /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6640802206E19F00C95B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +134,20 @@
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
+		AC16810B222C4B910012B378 /* Image Preview */ = {
+			isa = PBXGroup;
+			children = (
+				AC16810C222C4BBB0012B378 /* SharedImagePreviewViewController.swift */,
+				AC16810D222C4BBB0012B378 /* SharedImagePreviewViewController.xib */,
+				AC16810E222C4BBB0012B378 /* SharedImagePreviewRouterFactory.swift */,
+				AC16810F222C4BBB0012B378 /* SharedImagePreviewInteractor.swift */,
+				AC168110222C4BBC0012B378 /* SharedImagePreviewRouter.swift */,
+				AC168111222C4BBC0012B378 /* SharedImagePreviewPresenter.swift */,
+				AC168112222C4BBC0012B378 /* SharedImagePreviewDisplayFactory.swift */,
+			);
+			path = "Image Preview";
+			sourceTree = "<group>";
+		};
 		AC6640742206E19F00C95B6E = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +210,7 @@
 		ACFE040B22248588005DCE14 /* Shared Images */ = {
 			isa = PBXGroup;
 			children = (
+				AC16810B222C4B910012B378 /* Image Preview */,
 				ACFE04722225D107005DCE14 /* Grid */,
 				ACFE040C222485D8005DCE14 /* List */,
 			);
@@ -304,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC168114222C4BBC0012B378 /* SharedImagePreviewViewController.xib in Resources */,
 				AC168107222857DD0012B378 /* SharedImagesListCell.xib in Resources */,
 				AC6640AC220B8DA200C95B6E /* Asset.xcassets in Resources */,
 				ACFE047B2225D128005DCE14 /* SharedImagesGridViewController.xib in Resources */,
@@ -332,17 +362,21 @@
 				ACFE047D2225D128005DCE14 /* SharedImagesGridInteractor.swift in Sources */,
 				ACFE046F2225CBEC005DCE14 /* MainTabBarRouter.swift in Sources */,
 				AC6640AE220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift in Sources */,
+				AC168113222C4BBC0012B378 /* SharedImagePreviewViewController.swift in Sources */,
+				AC168117222C4BBC0012B378 /* SharedImagePreviewRouter.swift in Sources */,
 				ACFE047E2225D128005DCE14 /* SharedImagesGridRouter.swift in Sources */,
 				ACFE04452225C3A3005DCE14 /* SharedImagesListPresenter.swift in Sources */,
 				ACFE04432225C3A3005DCE14 /* SharedImagesListInteractor.swift in Sources */,
 				ACFE047F2225D128005DCE14 /* SharedImagesGridPresenter.swift in Sources */,
 				AC6640A7220B7A7500C95B6E /* ImageEditorViewState.swift in Sources */,
 				ACFE0486222724A0005DCE14 /* ImageStore.xcdatamodeld in Sources */,
+				AC168118222C4BBC0012B378 /* SharedImagePreviewPresenter.swift in Sources */,
 				ACFE04462225C3A3005DCE14 /* SharedImagesListDisplayFactory.swift in Sources */,
 				ACFE046B2225CBEC005DCE14 /* MainTabBarViewController.swift in Sources */,
 				AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */,
 				ACFE04422225C3A3005DCE14 /* SharedImagesListRouterFactory.swift in Sources */,
 				AC6640A1220A485700C95B6E /* UserText.swift in Sources */,
+				AC168116222C4BBC0012B378 /* SharedImagePreviewInteractor.swift in Sources */,
 				AC6640B0220CB8A000C95B6E /* ImageEditorRouterFactory.swift in Sources */,
 				AC168109222879500012B378 /* SharedImagesListDataSource.swift in Sources */,
 				ACFE047C2225D128005DCE14 /* SharedImagesGridRouterFactory.swift in Sources */,
@@ -350,7 +384,9 @@
 				AC6640952207753200C95B6E /* ImageEditorInteractor.swift in Sources */,
 				ACFE047A2225D128005DCE14 /* SharedImagesGridViewController.swift in Sources */,
 				AC66409F220A411B00C95B6E /* ImageEditorPresenter.swift in Sources */,
+				AC168119222C4BBC0012B378 /* SharedImagePreviewDisplayFactory.swift in Sources */,
 				ACFE04802225D128005DCE14 /* SharedImagesGridDisplayFactory.swift in Sources */,
+				AC168115222C4BBC0012B378 /* SharedImagePreviewRouterFactory.swift in Sources */,
 				AC16810522284E730012B378 /* SharedImagesListCell.swift in Sources */,
 				ACFE04AA22273DC7005DCE14 /* Dependencies.swift in Sources */,
 			);

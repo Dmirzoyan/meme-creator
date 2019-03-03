@@ -16,6 +16,7 @@ protocol SharedImagesListRoute {
 
 protocol SharedImagesListInternalRoute {
     func goToImageEditor(completion: @escaping ImageEditorCompletion)
+    func goToImagePreview(for image: UIImage)
 }
 
 final class SharedImagesListRouter: SharedImagesListRoute {
@@ -39,7 +40,17 @@ final class SharedImagesListRouter: SharedImagesListRoute {
 extension SharedImagesListRouter: SharedImagesListInternalRoute {
     
     func goToImageEditor(completion: @escaping ImageEditorCompletion) {
-        let imageEditorRouter = ImageEditorRouterFactory(navigationController: navigationController).make()
+        let imageEditorRouter = ImageEditorRouterFactory(
+            navigationController: navigationController
+        ).make()
         imageEditorRouter.start(exitRoute: completion)
+    }
+    
+    func goToImagePreview(for image: UIImage) {
+        let sharedImagePreview = SharedImagePreviewRouterFactory(
+            navigationController: navigationController,
+            image: image
+        ).make()
+        sharedImagePreview.start()
     }
 }

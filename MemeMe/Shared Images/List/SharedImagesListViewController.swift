@@ -11,6 +11,7 @@ import UIKit
 protocol SharedImagesListInteracting {
     func loadImages()
     func goToImageEditor()
+    func goToImagePreview(for image: UIImage)
 }
 
 final class SharedImagesListViewController: UIViewController {
@@ -19,6 +20,10 @@ final class SharedImagesListViewController: UIViewController {
     
     var interactor: SharedImagesListInteracting!
     var dataSource: SharedImagesListDataSource!
+    
+    private struct ViewMeasures {
+        static var tableViewRowHeight: CGFloat = 110
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +52,8 @@ final class SharedImagesListViewController: UIViewController {
         
         navigationBar.barStyle = .blackTranslucent
         navigationBar.barTintColor = UIColor.AppTheme.darkGrey
+        let backBarButtton = UIBarButtonItem(title: "Shared Images", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtton
     }
     
     private func addCreateImageButton() {
@@ -81,7 +88,7 @@ final class SharedImagesListViewController: UIViewController {
 extension SharedImagesListViewController: SharedImagesListDisplaying {
     
     func display(_ sharedImages: [Meme]) {
-        dataSource.sharedImages = sharedImages
+        dataSource.set(sharedImages)
     }
     
     func reloadData() {
@@ -92,6 +99,13 @@ extension SharedImagesListViewController: SharedImagesListDisplaying {
 extension SharedImagesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return ViewMeasures.tableViewRowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let image = dataSource.image(for: indexPath)
+        else { return }
+        
+        interactor.goToImagePreview(for: image)
     }
 }
