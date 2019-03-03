@@ -13,6 +13,7 @@ final class SharedImagesListCell: UITableViewCell {
     @IBOutlet weak var sharedImageView: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var chevronImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

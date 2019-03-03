@@ -29,8 +29,15 @@ final class SharedImagesListDataSource: NSObject, UITableViewDataSource {
         cell.sharedImageView.image = sharedImages?[indexPath.row].originalImage
         cell.topLabel.text = sharedImages?[indexPath.row].topText
         cell.bottomLabel.text = sharedImages?[indexPath.row].bottomText
+        setImageTintColor(for: cell)
         
         return cell
+    }
+    
+    private func setImageTintColor(for cell: SharedImagesListCell) {
+        let templateImage = cell.chevronImageView.image?.withRenderingMode(.alwaysTemplate)
+        cell.chevronImageView.image = templateImage
+        cell.chevronImageView.tintColor = .white
     }
 }
 

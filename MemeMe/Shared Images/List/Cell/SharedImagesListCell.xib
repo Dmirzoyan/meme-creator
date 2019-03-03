@@ -24,37 +24,56 @@
                             <constraint firstAttribute="width" secondItem="Vp2-Zy-JIq" secondAttribute="height" multiplier="1:1" id="bJi-3q-8c3"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kxO-HY-w7t">
-                        <rect key="frame" x="152.5" y="26" width="308.5" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="kxO-HY-w7t">
+                        <rect key="frame" x="152.5" y="26" width="288.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vIB-kb-OhM">
-                        <rect key="frame" x="152.5" y="81" width="308.5" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="vIB-kb-OhM">
+                        <rect key="frame" x="152.5" y="81" width="288.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chevron-right" translatesAutoresizingMaskIntoConstraints="NO" id="Quk-f2-LZn">
+                        <rect key="frame" x="451" y="56.5" width="15" height="15"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="U47-XA-wU1"/>
+                            <constraint firstAttribute="width" constant="15" id="tJ4-Tk-Qg6"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="imageRenderingMode">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="kxO-HY-w7t" secondAttribute="trailing" id="0SX-Rh-kgq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kxO-HY-w7t" secondAttribute="trailing" constant="20" id="0SX-Rh-kgq"/>
                     <constraint firstItem="Vp2-Zy-JIq" firstAttribute="top" secondItem="Izj-8t-yCZ" secondAttribute="top" id="Ayg-HH-NCo"/>
                     <constraint firstItem="Vp2-Zy-JIq" firstAttribute="centerY" secondItem="Izj-8t-yCZ" secondAttribute="centerY" id="C48-MB-gsL"/>
                     <constraint firstItem="Vp2-Zy-JIq" firstAttribute="leading" secondItem="Izj-8t-yCZ" secondAttribute="leading" id="CS7-9l-YW0"/>
                     <constraint firstItem="kxO-HY-w7t" firstAttribute="top" secondItem="Izj-8t-yCZ" secondAttribute="topMargin" constant="15" id="G1b-h9-wcd"/>
                     <constraint firstAttribute="bottomMargin" secondItem="vIB-kb-OhM" secondAttribute="bottom" constant="15" id="GWh-gC-SfE"/>
+                    <constraint firstAttribute="trailing" secondItem="Quk-f2-LZn" secondAttribute="trailing" constant="15" id="UIU-HY-gBD"/>
                     <constraint firstItem="vIB-kb-OhM" firstAttribute="leading" secondItem="Vp2-Zy-JIq" secondAttribute="trailing" constant="25" id="eny-gK-Jhq"/>
                     <constraint firstItem="kxO-HY-w7t" firstAttribute="leading" secondItem="Vp2-Zy-JIq" secondAttribute="trailing" constant="25" id="mnI-8b-iWB"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="vIB-kb-OhM" secondAttribute="trailing" id="rsF-GT-BLk"/>
+                    <constraint firstItem="Quk-f2-LZn" firstAttribute="centerY" secondItem="Izj-8t-yCZ" secondAttribute="centerY" id="oAH-j8-wSx"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vIB-kb-OhM" secondAttribute="trailing" constant="20" id="rsF-GT-BLk"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="bottomLabel" destination="vIB-kb-OhM" id="LnL-Si-ct5"/>
+                <outlet property="chevronImageView" destination="Quk-f2-LZn" id="eBK-8R-ON1"/>
                 <outlet property="sharedImageView" destination="Vp2-Zy-JIq" id="bUX-SF-h6W"/>
                 <outlet property="topLabel" destination="kxO-HY-w7t" id="5aN-d5-o9Z"/>
             </connections>
             <point key="canvasLocation" x="360.80000000000001" y="226.6866566716642"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Chevron-right" width="339" height="339"/>
+    </resources>
 </document>
