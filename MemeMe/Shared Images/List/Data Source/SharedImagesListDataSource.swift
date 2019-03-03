@@ -22,6 +22,8 @@ final class SharedImagesListDataSource: NSObject, UITableViewDataSource {
         ) as! SharedImagesListCell
         
         cell.sharedImageView.image = sharedImages?[indexPath.row].originalImage
+        cell.topLabel.text = sharedImages?[indexPath.row].topText
+        cell.bottomLabel.text = sharedImages?[indexPath.row].bottomText
         
         return cell
     }

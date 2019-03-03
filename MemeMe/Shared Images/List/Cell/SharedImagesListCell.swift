@@ -11,6 +11,8 @@ import UIKit
 final class SharedImagesListCell: UITableViewCell {
     
     @IBOutlet weak var sharedImageView: UIImageView!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
