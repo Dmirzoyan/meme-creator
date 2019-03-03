@@ -17,6 +17,9 @@
 		AC168117222C4BBC0012B378 /* SharedImagePreviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168110222C4BBC0012B378 /* SharedImagePreviewRouter.swift */; };
 		AC168118222C4BBC0012B378 /* SharedImagePreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168111222C4BBC0012B378 /* SharedImagePreviewPresenter.swift */; };
 		AC168119222C4BBC0012B378 /* SharedImagePreviewDisplayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168112222C4BBC0012B378 /* SharedImagePreviewDisplayFactory.swift */; };
+		AC16811C222C6D6F0012B378 /* SharedImagesGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC16811B222C6D6F0012B378 /* SharedImagesGridCell.swift */; };
+		AC16811E222C6E0C0012B378 /* SharedImagesGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC16811D222C6E0C0012B378 /* SharedImagesGridCell.xib */; };
+		AC168121222C6FA50012B378 /* SharedImagesGridDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168120222C6FA50012B378 /* SharedImagesGridDataSource.swift */; };
 		AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640802206E19F00C95B6E /* AppDelegate.swift */; };
 		AC6640832206E19F00C95B6E /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */; };
 		AC66408B2206E1A300C95B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6640892206E1A300C95B6E /* LaunchScreen.storyboard */; };
@@ -66,6 +69,9 @@
 		AC168110222C4BBC0012B378 /* SharedImagePreviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagePreviewRouter.swift; sourceTree = "<group>"; };
 		AC168111222C4BBC0012B378 /* SharedImagePreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagePreviewPresenter.swift; sourceTree = "<group>"; };
 		AC168112222C4BBC0012B378 /* SharedImagePreviewDisplayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagePreviewDisplayFactory.swift; sourceTree = "<group>"; };
+		AC16811B222C6D6F0012B378 /* SharedImagesGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridCell.swift; sourceTree = "<group>"; };
+		AC16811D222C6E0C0012B378 /* SharedImagesGridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharedImagesGridCell.xib; sourceTree = "<group>"; };
+		AC168120222C6FA50012B378 /* SharedImagesGridDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridDataSource.swift; sourceTree = "<group>"; };
 		AC66407D2206E19F00C95B6E /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6640802206E19F00C95B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +152,23 @@
 				AC168112222C4BBC0012B378 /* SharedImagePreviewDisplayFactory.swift */,
 			);
 			path = "Image Preview";
+			sourceTree = "<group>";
+		};
+		AC16811A222C6D570012B378 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AC16811B222C6D6F0012B378 /* SharedImagesGridCell.swift */,
+				AC16811D222C6E0C0012B378 /* SharedImagesGridCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AC16811F222C6F860012B378 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				AC168120222C6FA50012B378 /* SharedImagesGridDataSource.swift */,
+			);
+			path = "Data Source";
 			sourceTree = "<group>";
 		};
 		AC6640742206E19F00C95B6E = {
@@ -247,6 +270,8 @@
 		ACFE04722225D107005DCE14 /* Grid */ = {
 			isa = PBXGroup;
 			children = (
+				AC16811F222C6F860012B378 /* Data Source */,
+				AC16811A222C6D570012B378 /* Cell */,
 				ACFE04732225D128005DCE14 /* SharedImagesGridViewController.swift */,
 				ACFE04742225D128005DCE14 /* SharedImagesGridViewController.xib */,
 				ACFE04752225D128005DCE14 /* SharedImagesGridRouterFactory.swift */,
@@ -337,6 +362,7 @@
 				AC168107222857DD0012B378 /* SharedImagesListCell.xib in Resources */,
 				AC6640AC220B8DA200C95B6E /* Asset.xcassets in Resources */,
 				ACFE047B2225D128005DCE14 /* SharedImagesGridViewController.xib in Resources */,
+				AC16811E222C6E0C0012B378 /* SharedImagesGridCell.xib in Resources */,
 				AC66408B2206E1A300C95B6E /* LaunchScreen.storyboard in Resources */,
 				AC6640B6220DF42600C95B6E /* ImageEditorViewController.xib in Resources */,
 				ACFE04412225C3A3005DCE14 /* SharedImagesListViewController.xib in Resources */,
@@ -366,6 +392,7 @@
 				AC168117222C4BBC0012B378 /* SharedImagePreviewRouter.swift in Sources */,
 				ACFE047E2225D128005DCE14 /* SharedImagesGridRouter.swift in Sources */,
 				ACFE04452225C3A3005DCE14 /* SharedImagesListPresenter.swift in Sources */,
+				AC16811C222C6D6F0012B378 /* SharedImagesGridCell.swift in Sources */,
 				ACFE04432225C3A3005DCE14 /* SharedImagesListInteractor.swift in Sources */,
 				ACFE047F2225D128005DCE14 /* SharedImagesGridPresenter.swift in Sources */,
 				AC6640A7220B7A7500C95B6E /* ImageEditorViewState.swift in Sources */,
@@ -376,6 +403,7 @@
 				AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */,
 				ACFE04422225C3A3005DCE14 /* SharedImagesListRouterFactory.swift in Sources */,
 				AC6640A1220A485700C95B6E /* UserText.swift in Sources */,
+				AC168121222C6FA50012B378 /* SharedImagesGridDataSource.swift in Sources */,
 				AC168116222C4BBC0012B378 /* SharedImagePreviewInteractor.swift in Sources */,
 				AC6640B0220CB8A000C95B6E /* ImageEditorRouterFactory.swift in Sources */,
 				AC168109222879500012B378 /* SharedImagesListDataSource.swift in Sources */,

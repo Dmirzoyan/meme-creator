@@ -20,10 +20,12 @@ final class SharedImagesGridDisplayFactory: SharedImagesGridDisplayProducing {
         
         let interactor = SharedImagesGridInteractor(
             router: router,
-            presenter: presenter
+            presenter: presenter,
+            imagesProvider: Dependencies.imageStorageManager
         )
         
         viewController.interactor = interactor
+        viewController.dataSource = SharedImagesGridDataSource()
         
         return viewController
     }

@@ -9,18 +9,25 @@
 import UIKit
 
 protocol SharedImagesGridInteracting {
+    func loadImages()
     func goToImageEditor()
 }
 
 final class SharedImagesGridViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     var interactor: SharedImagesGridInteracting!
+    var dataSource: SharedImagesGridDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         applyStyle()
         addCreateImageButton()
+        setupCollectionView()
+        
+        interactor.loadImages()
     }
     
     private func applyStyle() {
@@ -50,9 +57,22 @@ final class SharedImagesGridViewController: UIViewController {
         interactor.goToImageEditor()
     }
     
+    private func setupCollectionView() {
+        let nib = UINib.init(nibName: "SharedImagesGridCell", bundle: nil)
+        
+        collectionView.register(nib, forCellWithReuseIdentifier: "SharedImagesGridCell")
+        collectionView.backgroundColor = UIColor.AppTheme.darkGrey
+        collectionView.dataSource = dataSource
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 }
 
-extension SharedImagesGridViewController: SharedImagesGridDisplaying {}
+extension SharedImagesGridViewController: SharedImagesGridDisplaying {
+    
+    func display(_ sharedImages: [UIImage]) {
+        dataSource.set(sharedImages)
+    }
+}

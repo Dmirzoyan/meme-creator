@@ -8,19 +8,30 @@
 
 import UIKit
 
-protocol SharedImagesGridPresenting {}
+protocol SharedImagesGridPresenting {
+    func present(_ sharedimages: [UIImage])
+}
 
 final class SharedImagesGridInteractor: SharedImagesGridInteracting {
     
     private let router: SharedImagesGridInternalRoute
     private let presenter: SharedImagesGridPresenting
+    private let imagesProvider: ImagesProviding
     
     init(
         router: SharedImagesGridInternalRoute,
-        presenter: SharedImagesGridPresenting
+        presenter: SharedImagesGridPresenting,
+        imagesProvider: ImagesProviding
     ) {
         self.router = router
         self.presenter = presenter
+        self.imagesProvider  = imagesProvider
+    }
+    
+    func loadImages() {
+        presenter.present(imagesProvider.sharedImages.map { meme -> UIImage in
+            return meme.editedImage
+        })
     }
     
     func goToImageEditor() {

@@ -35,12 +35,6 @@ final class SharedImagesListViewController: UIViewController {
         interactor.loadImages()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tableView.reloadData()
-    }
-    
     private func applyStyle() {
         view.backgroundColor = UIColor.AppTheme.darkGrey
         applyNavigationBarStyle()
@@ -105,7 +99,7 @@ extension SharedImagesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let image = dataSource.image(for: indexPath)
         else { return }
-        
+
         interactor.goToImagePreview(for: image)
     }
 }

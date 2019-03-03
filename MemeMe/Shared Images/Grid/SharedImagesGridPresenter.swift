@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol SharedImagesGridDisplaying {}
+protocol SharedImagesGridDisplaying {
+    func display(_ sharedImages: [UIImage])
+}
 
 final class SharedImagesGridPresenter: SharedImagesGridPresenting {
     
@@ -16,5 +18,9 @@ final class SharedImagesGridPresenter: SharedImagesGridPresenting {
     
     init(display: SharedImagesGridDisplaying) {
         self.display = display
+    }
+    
+    func present(_ sharedimages: [UIImage]) {
+        display.display(sharedimages)
     }
 }
