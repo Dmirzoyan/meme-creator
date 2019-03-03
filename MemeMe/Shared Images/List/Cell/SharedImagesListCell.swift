@@ -16,10 +16,18 @@ final class SharedImagesListCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        setCellHighlightColor()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = UIColor.AppTheme.lightGrey
+    }
+    
+    private func setCellHighlightColor() {
+        let customColorView = UIView()
+        customColorView.backgroundColor = UIColor.AppTheme.darkGrey
+        selectedBackgroundView = customColorView
     }
 }
