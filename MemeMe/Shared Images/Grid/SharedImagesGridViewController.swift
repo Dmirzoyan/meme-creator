@@ -20,6 +20,28 @@ final class SharedImagesGridViewController: UIViewController {
     var interactor: SharedImagesGridInteracting!
     var dataSource: SharedImagesGridDataSource!
     
+    private struct ViewMeasures {
+        static let interItemPadding: CGFloat = 5
+        static let nrItemsPerRow: CGFloat = 3
+    }
+    
+    private var layout: UICollectionViewLayout {
+        let layout = UICollectionViewFlowLayout()
+        let itemSize = (collectionView.frame.width - (ViewMeasures.nrItemsPerRow + 1)
+            * ViewMeasures.interItemPadding) / ViewMeasures.nrItemsPerRow
+        
+        layout.itemSize = CGSize(width: itemSize, height: itemSize)
+        layout.minimumInteritemSpacing = ViewMeasures.interItemPadding
+        layout.minimumLineSpacing = ViewMeasures.interItemPadding
+        layout.sectionInset = UIEdgeInsets(
+            top: ViewMeasures.interItemPadding,
+            left: ViewMeasures.interItemPadding,
+            bottom: ViewMeasures.interItemPadding,
+            right: ViewMeasures.interItemPadding
+        )
+        return layout
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,11 +55,6 @@ final class SharedImagesGridViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 110, height: 110)
-        layout.minimumInteritemSpacing = 5
-        layout.minimumLineSpacing = 5
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         collectionView.collectionViewLayout = layout
     }
     
@@ -76,7 +93,7 @@ final class SharedImagesGridViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.alwaysBounceVertical = true
     }
-    
+        
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
