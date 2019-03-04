@@ -22,18 +22,40 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RhB-NO-S53">
                         <rect key="frame" x="0.0" y="0.0" width="142" height="96"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Bfy-EU-0HF">
+                        <rect key="frame" x="0.0" y="13" width="142" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="cyf-Kk-mjc">
+                        <rect key="frame" x="0.0" y="62" width="142" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="cyf-Kk-mjc" firstAttribute="leading" secondItem="7Lf-XR-j0F" secondAttribute="leading" id="0NT-0d-OGl"/>
+                <constraint firstItem="Bfy-EU-0HF" firstAttribute="leading" secondItem="7Lf-XR-j0F" secondAttribute="leading" id="D3d-4X-lbK"/>
+                <constraint firstAttribute="trailing" secondItem="cyf-Kk-mjc" secondAttribute="trailing" id="Dgg-dI-jjd"/>
+                <constraint firstItem="Bfy-EU-0HF" firstAttribute="top" secondItem="7Lf-XR-j0F" secondAttribute="top" constant="13" id="SJf-HD-uuP"/>
+                <constraint firstItem="Bfy-EU-0HF" firstAttribute="centerX" secondItem="7Lf-XR-j0F" secondAttribute="centerX" id="azf-kW-gcf"/>
                 <constraint firstItem="RhB-NO-S53" firstAttribute="leading" secondItem="7Lf-XR-j0F" secondAttribute="leading" id="gb5-Xc-Lwt"/>
+                <constraint firstAttribute="trailing" secondItem="Bfy-EU-0HF" secondAttribute="trailing" id="itw-Pk-kCF"/>
+                <constraint firstItem="cyf-Kk-mjc" firstAttribute="centerX" secondItem="7Lf-XR-j0F" secondAttribute="centerX" id="lht-Oa-io7"/>
                 <constraint firstAttribute="bottom" secondItem="RhB-NO-S53" secondAttribute="bottom" id="pBL-Sw-L5b"/>
                 <constraint firstItem="RhB-NO-S53" firstAttribute="top" secondItem="7Lf-XR-j0F" secondAttribute="top" id="pox-a2-Wbt"/>
+                <constraint firstAttribute="bottom" secondItem="cyf-Kk-mjc" secondAttribute="bottom" constant="13" id="r57-ZY-RXn"/>
                 <constraint firstAttribute="trailing" secondItem="RhB-NO-S53" secondAttribute="trailing" id="vYF-6Z-FAF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="RRb-yp-Blx"/>
             <size key="customSize" width="142" height="96"/>
             <connections>
+                <outlet property="bottomLabel" destination="cyf-Kk-mjc" id="LbS-OH-bph"/>
                 <outlet property="sharedImageView" destination="RhB-NO-S53" id="u7J-KR-QAB"/>
+                <outlet property="topLabel" destination="Bfy-EU-0HF" id="6i7-9K-ZPf"/>
             </connections>
             <point key="canvasLocation" x="179.19999999999999" y="159.22038980509745"/>
         </collectionViewCell>

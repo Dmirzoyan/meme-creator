@@ -30,6 +30,8 @@ final class SharedImagesGridDataSource: NSObject, UICollectionViewDataSource {
         ) as! SharedImagesGridCell
         
         cell.sharedImageView.image = sharedImages?[indexPath.row].originalImage
+        cell.topLabel.text = sharedImages?[indexPath.row].topText
+        cell.bottomLabel.text = sharedImages?[indexPath.row].bottomText
         
         return cell
     }

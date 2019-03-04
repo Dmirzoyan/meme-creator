@@ -10,6 +10,8 @@ import UIKit
 
 final class SharedImagesGridCell: UICollectionViewCell {
     
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
     @IBOutlet weak var sharedImageView: UIImageView!
     
     override func awakeFromNib() {
