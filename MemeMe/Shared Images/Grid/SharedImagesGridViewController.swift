@@ -49,6 +49,10 @@ final class SharedImagesGridViewController: UIViewController {
         applyStyle()
         addCreateImageButton()
         setupCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         interactor.loadImages()
     }
@@ -107,6 +111,7 @@ extension SharedImagesGridViewController: SharedImagesGridDisplaying {
     
     func display(_ sharedImages: [Meme]) {
         dataSource.set(sharedImages)
+        collectionView.reloadData()
     }
 }
 

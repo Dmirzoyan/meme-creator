@@ -31,6 +31,10 @@ final class SharedImagesListViewController: UIViewController {
         applyStyle()
         addCreateImageButton()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         interactor.loadImages()
     }
@@ -83,10 +87,11 @@ extension SharedImagesListViewController: SharedImagesListDisplaying {
     
     func display(_ sharedImages: [Meme]) {
         dataSource.set(sharedImages)
+        tableView.reloadData()
     }
     
     func reloadData() {
-        tableView.reloadData()
+//        tableView.reloadData()
     }
 }
 

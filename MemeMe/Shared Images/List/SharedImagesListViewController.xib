@@ -30,9 +30,9 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="w6s-yh-GLt" firstAttribute="bottom" secondItem="Vl9-RB-AYB" secondAttribute="bottom" id="BKC-2r-7SR"/>
+                <constraint firstItem="Vl9-RB-AYB" firstAttribute="leading" secondItem="xSV-jh-35U" secondAttribute="leading" id="Cmq-Ja-bHj"/>
                 <constraint firstItem="Vl9-RB-AYB" firstAttribute="top" secondItem="w6s-yh-GLt" secondAttribute="top" id="fyI-vq-Pqz"/>
-                <constraint firstItem="w6s-yh-GLt" firstAttribute="trailing" secondItem="Vl9-RB-AYB" secondAttribute="trailing" id="mj7-uI-XDs"/>
-                <constraint firstItem="Vl9-RB-AYB" firstAttribute="leading" secondItem="w6s-yh-GLt" secondAttribute="leading" id="uQO-bt-G6m"/>
+                <constraint firstAttribute="trailing" secondItem="Vl9-RB-AYB" secondAttribute="trailing" id="mFG-ZB-Gow"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="w6s-yh-GLt"/>
         </view>
