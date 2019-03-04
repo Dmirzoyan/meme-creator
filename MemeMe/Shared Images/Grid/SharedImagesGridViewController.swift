@@ -11,6 +11,7 @@ import UIKit
 protocol SharedImagesGridInteracting {
     func loadImages()
     func goToImageEditor()
+    func goToImagePreview(for image: UIImage)
 }
 
 final class SharedImagesGridViewController: UIViewController {
@@ -62,13 +63,15 @@ final class SharedImagesGridViewController: UIViewController {
         view.backgroundColor = UIColor.AppTheme.darkGrey
         applyNavigationBarStyle()
     }
-    
+        
     private func applyNavigationBarStyle() {
         guard let navigationBar = navigationController?.navigationBar
-            else { return }
+        else { return }
         
         navigationBar.barStyle = .blackTranslucent
         navigationBar.barTintColor = UIColor.AppTheme.darkGrey
+        let backBarButtton = UIBarButtonItem(title: "Shared Images", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtton
     }
     
     private func addCreateImageButton() {
@@ -91,6 +94,7 @@ final class SharedImagesGridViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "SharedImagesGridCell")
         collectionView.backgroundColor = UIColor.AppTheme.darkGrey
         collectionView.dataSource = dataSource
+        collectionView.delegate = self
         collectionView.alwaysBounceVertical = true
     }
         
@@ -103,5 +107,15 @@ extension SharedImagesGridViewController: SharedImagesGridDisplaying {
     
     func display(_ sharedImages: [Meme]) {
         dataSource.set(sharedImages)
+    }
+}
+
+extension SharedImagesGridViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let image = dataSource.image(for: indexPath)
+        else { return }
+        
+        interactor.goToImagePreview(for: image)
     }
 }

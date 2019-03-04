@@ -14,6 +14,7 @@ protocol SharedImagesGridRoute {
 
 protocol SharedImagesGridInternalRoute {
     func goToImageEditor()
+    func goToImagePreview(for image: UIImage)
 }
 
 final class SharedImagesGridRouter: SharedImagesGridRoute {
@@ -39,5 +40,13 @@ extension SharedImagesGridRouter: SharedImagesGridInternalRoute {
     func goToImageEditor() {
         let imageEditorRouter = ImageEditorRouterFactory(navigationController: navigationController).make()
         imageEditorRouter.start(exitRoute: nil)
+    }
+    
+    func goToImagePreview(for image: UIImage) {
+        let sharedImagePreview = SharedImagePreviewRouterFactory(
+            navigationController: navigationController,
+            image: image
+        ).make()
+        sharedImagePreview.start()
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 protocol SharedImagesGridDataProviding {
     func set(_ images: [Meme])
-    func image(for indexPath: IndexPath) -> Meme?
+    func image(for indexPath: IndexPath) -> UIImage?
 }
 
 final class SharedImagesGridDataSource: NSObject, UICollectionViewDataSource {
@@ -43,7 +43,7 @@ extension SharedImagesGridDataSource: SharedImagesGridDataProviding {
         sharedImages = images
     }
     
-    func image(for indexPath: IndexPath) -> Meme? {
-        return sharedImages?[indexPath.row]
+    func image(for indexPath: IndexPath) -> UIImage? {
+        return sharedImages?[indexPath.row].editedImage
     }
 }

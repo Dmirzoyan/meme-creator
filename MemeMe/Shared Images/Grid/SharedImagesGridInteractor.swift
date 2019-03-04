@@ -35,4 +35,8 @@ final class SharedImagesGridInteractor: SharedImagesGridInteracting {
     func goToImageEditor() {
         router.goToImageEditor()
     }
+    
+    func goToImagePreview(for image: UIImage) {
+        router.goToImagePreview(for: image)
+    }
 }
