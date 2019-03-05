@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SharedImagesListDisplaying {
-    func display(_ sharedImages: [Meme])
+    func display(_ sharedImages: [SharedImage])
     func reloadData()
 }
 
@@ -21,7 +21,7 @@ final class SharedImagesListPresenter: SharedImagesListPresenting {
         self.display = display
     }
     
-    func present(_ sharedImages: [Meme]) {
+    func present(_ sharedImages: [SharedImage]) {
         display.display(sharedImages)
     }
     

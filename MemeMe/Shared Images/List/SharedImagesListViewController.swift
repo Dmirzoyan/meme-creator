@@ -10,6 +10,7 @@ import UIKit
 
 protocol SharedImagesListInteracting {
     func loadImages()
+    func removeImage(at index: Int)
     func goToImageEditor()
     func goToImagePreview(for image: UIImage)
 }
@@ -85,7 +86,7 @@ final class SharedImagesListViewController: UIViewController {
 
 extension SharedImagesListViewController: SharedImagesListDisplaying {
     
-    func display(_ sharedImages: [Meme]) {
+    func display(_ sharedImages: [SharedImage]) {
         dataSource.set(sharedImages)
         tableView.reloadData()
     }
@@ -106,5 +107,9 @@ extension SharedImagesListViewController: UITableViewDelegate {
         else { return }
 
         interactor.goToImagePreview(for: image)
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        interactor.removeImage(at: indexPath.row)
     }
 }

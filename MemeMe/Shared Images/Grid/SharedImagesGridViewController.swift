@@ -109,7 +109,7 @@ final class SharedImagesGridViewController: UIViewController {
 
 extension SharedImagesGridViewController: SharedImagesGridDisplaying {
     
-    func display(_ sharedImages: [Meme]) {
+    func display(_ sharedImages: [SharedImage]) {
         dataSource.set(sharedImages)
         collectionView.reloadData()
     }

@@ -32,7 +32,7 @@
 		AC664093220774BA00C95B6E /* ImageEditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC664092220774BA00C95B6E /* ImageEditorRouter.swift */; };
 		AC6640952207753200C95B6E /* ImageEditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640942207753200C95B6E /* ImageEditorInteractor.swift */; };
 		AC66409B22078EB500C95B6E /* KeyboardSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66409A22078EB500C95B6E /* KeyboardSlide.swift */; };
-		AC66409D220A231000C95B6E /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66409C220A231000C95B6E /* Meme.swift */; };
+		AC66409D220A231000C95B6E /* SharedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66409C220A231000C95B6E /* SharedImage.swift */; };
 		AC66409F220A411B00C95B6E /* ImageEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66409E220A411B00C95B6E /* ImageEditorPresenter.swift */; };
 		AC6640A1220A485700C95B6E /* UserText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640A0220A485700C95B6E /* UserText.swift */; };
 		AC6640A7220B7A7500C95B6E /* ImageEditorViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640A6220B7A7500C95B6E /* ImageEditorViewState.swift */; };
@@ -92,7 +92,7 @@
 		AC664092220774BA00C95B6E /* ImageEditorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorRouter.swift; sourceTree = "<group>"; };
 		AC6640942207753200C95B6E /* ImageEditorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorInteractor.swift; sourceTree = "<group>"; };
 		AC66409A22078EB500C95B6E /* KeyboardSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSlide.swift; sourceTree = "<group>"; };
-		AC66409C220A231000C95B6E /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		AC66409C220A231000C95B6E /* SharedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImage.swift; sourceTree = "<group>"; };
 		AC66409E220A411B00C95B6E /* ImageEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorPresenter.swift; sourceTree = "<group>"; };
 		AC6640A0220A485700C95B6E /* UserText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserText.swift; sourceTree = "<group>"; };
 		AC6640A6220B7A7500C95B6E /* ImageEditorViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewState.swift; sourceTree = "<group>"; };
@@ -313,7 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				ACFE04822227201B005DCE14 /* ImageStorageManager.swift */,
-				AC66409C220A231000C95B6E /* Meme.swift */,
+				AC66409C220A231000C95B6E /* SharedImage.swift */,
 			);
 			path = "Image Storage Manager";
 			sourceTree = "<group>";
@@ -411,7 +411,7 @@
 				ACFE046D2225CBEC005DCE14 /* MainTabBarRouterFactory.swift in Sources */,
 				AC664093220774BA00C95B6E /* ImageEditorRouter.swift in Sources */,
 				ACFE04402225C3A3005DCE14 /* SharedImagesListViewController.swift in Sources */,
-				AC66409D220A231000C95B6E /* Meme.swift in Sources */,
+				AC66409D220A231000C95B6E /* SharedImage.swift in Sources */,
 				AC16812F222EF0E30012B378 /* SplashScreenInteractor.swift in Sources */,
 				AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */,
 				AC168130222EF0E30012B378 /* SplashScreenRouter.swift in Sources */,

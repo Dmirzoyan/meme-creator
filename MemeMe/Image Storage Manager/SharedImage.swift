@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Meme {
+struct SharedImage {
     let topText: String
     let bottomText: String
     let originalImage: UIImage

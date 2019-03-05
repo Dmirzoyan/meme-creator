@@ -11,16 +11,17 @@ import CoreData
 
 protocol ImageStorageManaging {
     func loadImagesFromStore()
-    func store(_ meme: Meme)
+    func store(_ image: SharedImage)
+    func deleteImage(at index: Int)
 }
 
 protocol ImagesProviding {
-    var sharedImages: [Meme] { get }
+    var sharedImages: [SharedImage] { get }
 }
 
 final class ImageStorageManager: ImageStorageManaging, ImagesProviding {
     
-    var sharedImages = [Meme]()
+    var sharedImages = [SharedImage]()
     
     func loadImagesFromStore() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -31,20 +32,20 @@ final class ImageStorageManager: ImageStorageManaging, ImagesProviding {
         do {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {                
-                let meme = Meme(
+                let sharedImage = SharedImage(
                     topText: data.value(forKey: "topText") as! String,
                     bottomText: data.value(forKey: "bottomText") as! String,
                     originalImage: UIImage(data: data.value(forKey: "originalImage") as! Data)!,
                     editedImage: UIImage(data: data.value(forKey: "editedImage") as! Data)!
                 )
-                sharedImages.append(meme)
+                sharedImages.append(sharedImage)
             }
         } catch {
             print("Failed")
         }
     }
     
-    func store(_ sharedImage: Meme) {
+    func store(_ sharedImage: SharedImage) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "SharedImages", in: context)
@@ -62,5 +63,9 @@ final class ImageStorageManager: ImageStorageManaging, ImagesProviding {
         }
         
         sharedImages.append(sharedImage)
+    }
+    
+    func deleteImage(at index: Int) {
+        
     }
 }

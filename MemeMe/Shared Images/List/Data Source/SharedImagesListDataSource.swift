@@ -9,13 +9,13 @@
 import UIKit
 
 protocol SharedImagesListDataProviding {
-    func set(_ images: [Meme])
+    func set(_ images: [SharedImage])
     func image(for indexPath: IndexPath) -> UIImage?
 }
 
 final class SharedImagesListDataSource: NSObject, UITableViewDataSource {
     
-    private var sharedImages: [Meme]?
+    private var sharedImages: [SharedImage]?
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sharedImages?.count ?? 0
@@ -34,6 +34,13 @@ final class SharedImagesListDataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            sharedImages?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+        }
+    }
+    
     private func setImageTintColor(for cell: SharedImagesListCell) {
         let templateImage = cell.chevronImageView.image?.withRenderingMode(.alwaysTemplate)
         cell.chevronImageView.image = templateImage
@@ -43,7 +50,7 @@ final class SharedImagesListDataSource: NSObject, UITableViewDataSource {
 
 extension SharedImagesListDataSource: SharedImagesListDataProviding {
     
-    func set(_ images: [Meme]) {
+    func set(_ images: [SharedImage]) {
         sharedImages = images
     }
     

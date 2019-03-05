@@ -9,13 +9,13 @@
 import UIKit
 
 protocol SharedImagesGridDataProviding {
-    func set(_ images: [Meme])
+    func set(_ images: [SharedImage])
     func image(for indexPath: IndexPath) -> UIImage?
 }
 
 final class SharedImagesGridDataSource: NSObject, UICollectionViewDataSource {
     
-    private var sharedImages: [Meme]?
+    private var sharedImages: [SharedImage]?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sharedImages?.count ?? 0
@@ -39,7 +39,7 @@ final class SharedImagesGridDataSource: NSObject, UICollectionViewDataSource {
 
 extension SharedImagesGridDataSource: SharedImagesGridDataProviding {
  
-    func set(_ images: [Meme]) {
+    func set(_ images: [SharedImage]) {
         sharedImages = images
     }
     

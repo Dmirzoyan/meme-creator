@@ -54,7 +54,7 @@ final class ImageEditorInteractor: ImageEditorInteracting {
     func share(_ image: UIImage) {
         router.share(image) { [weak self] success in
             if success {
-                self?.saveMeme(editedImage: image)
+                self?.storeSharedImage(editedImage: image)
                 self?.router.dismiss(isImageShared: true)
             }
         }
@@ -69,9 +69,9 @@ final class ImageEditorInteractor: ImageEditorInteracting {
         router.dismiss(isImageShared: false)
     }
     
-    private func saveMeme(editedImage: UIImage) {
+    private func storeSharedImage(editedImage: UIImage) {
         storageManager.store(
-            Meme(
+            SharedImage(
                 topText: userText.top,
                 bottomText: userText.bottom,
                 originalImage: originalImage,
