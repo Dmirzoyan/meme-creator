@@ -34,7 +34,7 @@ final class SharedImagesListInteractor: SharedImagesListInteracting {
     }
     
     func removeImage(at index: Int) {
-        
+        imagesProvider.deleteImage(at: index)
     }
     
     func goToImageEditor() {

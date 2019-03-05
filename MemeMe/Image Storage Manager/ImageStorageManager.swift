@@ -12,11 +12,11 @@ import CoreData
 protocol ImageStorageManaging {
     func loadImagesFromStore()
     func store(_ image: SharedImage)
-    func deleteImage(at index: Int)
 }
 
 protocol ImagesProviding {
     var sharedImages: [SharedImage] { get }
+    func deleteImage(at index: Int)
 }
 
 final class ImageStorageManager: ImageStorageManaging, ImagesProviding {
@@ -66,6 +66,25 @@ final class ImageStorageManager: ImageStorageManaging, ImagesProviding {
     }
     
     func deleteImage(at index: Int) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SharedImages")
         
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            if index < result.count {
+                context.delete(result[index] as! NSManagedObject)
+                sharedImages.remove(at: index)
+            }
+        } catch {
+            print("Failed")
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            print("Failed saving")
+        }
     }
 }

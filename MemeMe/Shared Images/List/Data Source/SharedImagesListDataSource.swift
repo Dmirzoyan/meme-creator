@@ -9,13 +9,14 @@
 import UIKit
 
 protocol SharedImagesListDataProviding {
-    func set(_ images: [SharedImage])
+    func set(_ images: [SharedImage], imageDeletionHandler: @escaping (Int) -> Void)
     func image(for indexPath: IndexPath) -> UIImage?
 }
 
 final class SharedImagesListDataSource: NSObject, UITableViewDataSource {
     
     private var sharedImages: [SharedImage]?
+    var imageDeletionHandler: ((Int) -> Void)?
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sharedImages?.count ?? 0
@@ -37,6 +38,7 @@ final class SharedImagesListDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             sharedImages?.remove(at: indexPath.row)
+            imageDeletionHandler?(indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
         }
     }
@@ -50,8 +52,9 @@ final class SharedImagesListDataSource: NSObject, UITableViewDataSource {
 
 extension SharedImagesListDataSource: SharedImagesListDataProviding {
     
-    func set(_ images: [SharedImage]) {
+    func set(_ images: [SharedImage], imageDeletionHandler: @escaping (Int) -> Void) {
         sharedImages = images
+        self.imageDeletionHandler = imageDeletionHandler
     }
     
     func image(for indexPath: IndexPath) -> UIImage? {

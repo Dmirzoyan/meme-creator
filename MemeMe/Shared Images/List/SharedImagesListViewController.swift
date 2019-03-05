@@ -87,7 +87,12 @@ final class SharedImagesListViewController: UIViewController {
 extension SharedImagesListViewController: SharedImagesListDisplaying {
     
     func display(_ sharedImages: [SharedImage]) {
-        dataSource.set(sharedImages)
+        dataSource.set(
+            sharedImages,
+            imageDeletionHandler: { [weak self] index in
+                self?.interactor.removeImage(at: index)
+            }
+        )
         tableView.reloadData()
     }
     
@@ -107,9 +112,5 @@ extension SharedImagesListViewController: UITableViewDelegate {
         else { return }
 
         interactor.goToImagePreview(for: image)
-    }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        interactor.removeImage(at: indexPath.row)
     }
 }
