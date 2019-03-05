@@ -15,15 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        initializeServices()
         
         let navigationController = UINavigationController()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
-        let mainTabBarRouter = MainTabBarRouterFactory(navigationController: navigationController).make()
-        mainTabBarRouter.start()
+        let splashScreenRouter = SplashScreenRouterFactory(navigationController: navigationController).make()
+        splashScreenRouter.start()
         
         return true
     }
@@ -77,10 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
-    }
-    
-    private func initializeServices() {
-        Dependencies.imageStorageManager.loadImagesFromStore()
     }
 }
 
