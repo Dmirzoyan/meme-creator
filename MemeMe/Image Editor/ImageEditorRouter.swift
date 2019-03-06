@@ -77,6 +77,9 @@ extension ImageEditorRouter: ImageEditorInternalRouting {
             completion(success)
         }
         
+        activityViewController.popoverPresentationController?.delegate =
+            viewController as? UIPopoverPresentationControllerDelegate
+        
         viewController?.present(activityViewController, animated: true, completion: nil)
     }
     

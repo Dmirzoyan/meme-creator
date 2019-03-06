@@ -205,3 +205,10 @@ extension ImageEditorViewController: ImageEditorDisplaying {
         }
     }
 }
+
+extension ImageEditorViewController: UIPopoverPresentationControllerDelegate {
+    
+    func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
+        popoverPresentationController.barButtonItem = navigationItem.leftBarButtonItem
+    }
+}
