@@ -10,81 +10,72 @@ import UIKit
 import CoreData
 
 protocol ImageStorageManaging {
-    func loadImagesFromStore()
-    func store(_ image: SharedImage)
-}
-
-protocol ImagesProviding {
     var sharedImages: [SharedImage] { get }
+    func store(_ image: SharedImage)
     func deleteImage(at index: Int)
 }
 
-final class ImageStorageManager: ImageStorageManaging, ImagesProviding {
+final class ImageStorageManager: ImageStorageManaging {
     
     var sharedImages = [SharedImage]()
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     func loadImagesFromStore() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SharedImages")
-        
         request.returnsObjectsAsFaults = false
+        
         do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {                
-                let sharedImage = SharedImage(
-                    topText: data.value(forKey: "topText") as! String,
-                    bottomText: data.value(forKey: "bottomText") as! String,
-                    originalImage: UIImage(data: data.value(forKey: "originalImage") as! Data)!,
-                    editedImage: UIImage(data: data.value(forKey: "editedImage") as! Data)!
-                )
-                sharedImages.append(sharedImage)
+            let objects = try context.fetch(request)
+            for object in objects {
+                sharedImages.append(sharedImage(for: object as! NSManagedObject))
             }
-        } catch {
-            print("Failed")
-        }
+        } catch {}
     }
     
     func store(_ sharedImage: SharedImage) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "SharedImages", in: context)
-        let newImage = NSManagedObject(entity: entity!, insertInto: context)
+        let object = NSManagedObject(entity: entity!, insertInto: context)
         
-        newImage.setValue(sharedImage.topText, forKey: "topText")
-        newImage.setValue(sharedImage.bottomText, forKey: "bottomText")
-        newImage.setValue(sharedImage.originalImage.pngData(), forKey: "originalImage")
-        newImage.setValue(sharedImage.editedImage.pngData(), forKey: "editedImage")
+        set(object, for: sharedImage)
         
-        do {
-            try context.save()
-        } catch {
-            print("Failed saving")
-        }
+        do { try context.save() }
+        catch {}
         
         sharedImages.append(sharedImage)
     }
     
     func deleteImage(at index: Int) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SharedImages")
-        
         request.returnsObjectsAsFaults = false
+        
         do {
-            let result = try context.fetch(request)
-            if index < result.count {
-                context.delete(result[index] as! NSManagedObject)
+            let objects = try context.fetch(request)
+            if index < objects.count {
+                context.delete(objects[index] as! NSManagedObject)
                 sharedImages.remove(at: index)
             }
-        } catch {
-            print("Failed")
-        }
+        } catch {}
         
-        do {
-            try context.save()
-        } catch {
-            print("Failed saving")
-        }
+        do { try context.save() }
+        catch {}
+    }
+    
+    private func sharedImage(for object: NSManagedObject) -> SharedImage {
+        return SharedImage(
+            topText: object.value(forKey: "topText") as! String,
+            bottomText: object.value(forKey: "bottomText") as! String,
+            originalImage: UIImage(data: object.value(forKey: "originalImage") as! Data)!,
+            editedImage: UIImage(data: object.value(forKey: "editedImage") as! Data)!
+        )
+    }
+    
+    private func set(_ object: NSManagedObject, for sharedImage: SharedImage) {
+        object.setValue(sharedImage.topText, forKey: "topText")
+        object.setValue(sharedImage.bottomText, forKey: "bottomText")
+        object.setValue(sharedImage.originalImage.pngData(), forKey: "originalImage")
+        object.setValue(sharedImage.editedImage.pngData(), forKey: "editedImage")
     }
 }

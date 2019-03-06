@@ -17,24 +17,24 @@ final class SharedImagesListInteractor: SharedImagesListInteracting {
     
     private let router: SharedImagesListInternalRoute
     private let presenter: SharedImagesListPresenting
-    private let imagesProvider: ImagesProviding
+    private let storageManager: ImageStorageManaging
     
     init(
         router: SharedImagesListInternalRoute,
         presenter: SharedImagesListPresenting,
-        imagesProvider: ImagesProviding
+        storageManager: ImageStorageManaging
     ) {
         self.router = router
         self.presenter = presenter
-        self.imagesProvider = imagesProvider
+        self.storageManager = storageManager
     }
     
     func loadImages() {
-        presenter.present(imagesProvider.sharedImages)
+        presenter.present(storageManager.sharedImages)
     }
     
     func removeImage(at index: Int) {
-        imagesProvider.deleteImage(at: index)
+        storageManager.deleteImage(at: index)
     }
     
     func goToImageEditor() {
@@ -44,7 +44,7 @@ final class SharedImagesListInteractor: SharedImagesListInteracting {
                 let strongSelf = self
             else { return }
             
-            strongSelf.presenter.present(strongSelf.imagesProvider.sharedImages)
+            strongSelf.presenter.present(strongSelf.storageManager.sharedImages)
             strongSelf.presenter.reloadData()
         }
     }

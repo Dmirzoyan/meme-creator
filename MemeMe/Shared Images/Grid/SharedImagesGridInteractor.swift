@@ -16,20 +16,20 @@ final class SharedImagesGridInteractor: SharedImagesGridInteracting {
     
     private let router: SharedImagesGridInternalRoute
     private let presenter: SharedImagesGridPresenting
-    private let imagesProvider: ImagesProviding
+    private let imageProvider: ImageStorageManaging
     
     init(
         router: SharedImagesGridInternalRoute,
         presenter: SharedImagesGridPresenting,
-        imagesProvider: ImagesProviding
+        imageProvider: ImageStorageManaging
     ) {
         self.router = router
         self.presenter = presenter
-        self.imagesProvider  = imagesProvider
+        self.imageProvider  = imageProvider
     }
     
     func loadImages() {
-        presenter.present(imagesProvider.sharedImages)
+        presenter.present(imageProvider.sharedImages)
     }
     
     func goToImageEditor() {

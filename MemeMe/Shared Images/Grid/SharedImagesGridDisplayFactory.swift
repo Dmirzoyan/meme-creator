@@ -21,7 +21,7 @@ final class SharedImagesGridDisplayFactory: SharedImagesGridDisplayProducing {
         let interactor = SharedImagesGridInteractor(
             router: router,
             presenter: presenter,
-            imagesProvider: Dependencies.imageStorageManager
+            imageProvider: Dependencies.imageStorageManager
         )
         
         viewController.interactor = interactor
