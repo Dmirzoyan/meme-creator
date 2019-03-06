@@ -16,8 +16,8 @@ final class MainTabBarViewController: UITabBarController {
         applyStyle()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
         addBarBorder()
     }
