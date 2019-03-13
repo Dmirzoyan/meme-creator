@@ -22,7 +22,7 @@ final class SharedImagesGridViewController: UIViewController {
     var dataSource: SharedImagesGridDataSource!
     
     private struct ViewMeasures {
-        static let interItemPadding: CGFloat = 5
+        static let interItemPadding: CGFloat = 0
         static let nrItemsPerRow: CGFloat = 3
     }
     
