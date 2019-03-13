@@ -20,12 +20,6 @@
 		AC16811C222C6D6F0012B378 /* SharedImagesGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC16811B222C6D6F0012B378 /* SharedImagesGridCell.swift */; };
 		AC16811E222C6E0C0012B378 /* SharedImagesGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC16811D222C6E0C0012B378 /* SharedImagesGridCell.xib */; };
 		AC168121222C6FA50012B378 /* SharedImagesGridDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168120222C6FA50012B378 /* SharedImagesGridDataSource.swift */; };
-		AC16812C222EF0E30012B378 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168125222EF0E30012B378 /* SplashScreenViewController.swift */; };
-		AC16812D222EF0E30012B378 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC168126222EF0E30012B378 /* SplashScreenViewController.xib */; };
-		AC16812E222EF0E30012B378 /* SplashScreenRouterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168127222EF0E30012B378 /* SplashScreenRouterFactory.swift */; };
-		AC16812F222EF0E30012B378 /* SplashScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168128222EF0E30012B378 /* SplashScreenInteractor.swift */; };
-		AC168130222EF0E30012B378 /* SplashScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC168129222EF0E30012B378 /* SplashScreenRouter.swift */; };
-		AC168132222EF0E30012B378 /* SplashScreenDisplayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC16812B222EF0E30012B378 /* SplashScreenDisplayFactory.swift */; };
 		AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640802206E19F00C95B6E /* AppDelegate.swift */; };
 		AC6640832206E19F00C95B6E /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */; };
 		AC66408B2206E1A300C95B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6640892206E1A300C95B6E /* LaunchScreen.storyboard */; };
@@ -78,12 +72,6 @@
 		AC16811B222C6D6F0012B378 /* SharedImagesGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridCell.swift; sourceTree = "<group>"; };
 		AC16811D222C6E0C0012B378 /* SharedImagesGridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SharedImagesGridCell.xib; sourceTree = "<group>"; };
 		AC168120222C6FA50012B378 /* SharedImagesGridDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImagesGridDataSource.swift; sourceTree = "<group>"; };
-		AC168125222EF0E30012B378 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
-		AC168126222EF0E30012B378 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
-		AC168127222EF0E30012B378 /* SplashScreenRouterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenRouterFactory.swift; sourceTree = "<group>"; };
-		AC168128222EF0E30012B378 /* SplashScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenInteractor.swift; sourceTree = "<group>"; };
-		AC168129222EF0E30012B378 /* SplashScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenRouter.swift; sourceTree = "<group>"; };
-		AC16812B222EF0E30012B378 /* SplashScreenDisplayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenDisplayFactory.swift; sourceTree = "<group>"; };
 		AC66407D2206E19F00C95B6E /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6640802206E19F00C95B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC6640822206E19F00C95B6E /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
@@ -183,19 +171,6 @@
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
-		AC168124222EF0C50012B378 /* Splash Screen */ = {
-			isa = PBXGroup;
-			children = (
-				AC168125222EF0E30012B378 /* SplashScreenViewController.swift */,
-				AC168126222EF0E30012B378 /* SplashScreenViewController.xib */,
-				AC168127222EF0E30012B378 /* SplashScreenRouterFactory.swift */,
-				AC168128222EF0E30012B378 /* SplashScreenInteractor.swift */,
-				AC168129222EF0E30012B378 /* SplashScreenRouter.swift */,
-				AC16812B222EF0E30012B378 /* SplashScreenDisplayFactory.swift */,
-			);
-			path = "Splash Screen";
-			sourceTree = "<group>";
-		};
 		AC6640742206E19F00C95B6E = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +192,6 @@
 			children = (
 				ACFE04A822273DA8005DCE14 /* Dependencies */,
 				ACFE048122271FEF005DCE14 /* Image Storage Manager */,
-				AC168124222EF0C50012B378 /* Splash Screen */,
 				ACFE04472225C4A4005DCE14 /* Tab Bar */,
 				ACFE040B22248588005DCE14 /* Shared Images */,
 				ACFE040A22248307005DCE14 /* Image Editor */,
@@ -390,7 +364,6 @@
 				ACFE047B2225D128005DCE14 /* SharedImagesGridViewController.xib in Resources */,
 				AC16811E222C6E0C0012B378 /* SharedImagesGridCell.xib in Resources */,
 				AC66408B2206E1A300C95B6E /* LaunchScreen.storyboard in Resources */,
-				AC16812D222EF0E30012B378 /* SplashScreenViewController.xib in Resources */,
 				AC6640B6220DF42600C95B6E /* ImageEditorViewController.xib in Resources */,
 				ACFE04412225C3A3005DCE14 /* SharedImagesListViewController.xib in Resources */,
 			);
@@ -405,16 +378,13 @@
 			files = (
 				ACFE04712225CBEC005DCE14 /* MainTabBarDisplayFactory.swift in Sources */,
 				AC6640832206E19F00C95B6E /* ImageEditorViewController.swift in Sources */,
-				AC16812C222EF0E30012B378 /* SplashScreenViewController.swift in Sources */,
 				ACFE04442225C3A3005DCE14 /* SharedImagesListRouter.swift in Sources */,
 				ACFE04832227201B005DCE14 /* ImageStorageManager.swift in Sources */,
 				ACFE046D2225CBEC005DCE14 /* MainTabBarRouterFactory.swift in Sources */,
 				AC664093220774BA00C95B6E /* ImageEditorRouter.swift in Sources */,
 				ACFE04402225C3A3005DCE14 /* SharedImagesListViewController.swift in Sources */,
 				AC66409D220A231000C95B6E /* SharedImage.swift in Sources */,
-				AC16812F222EF0E30012B378 /* SplashScreenInteractor.swift in Sources */,
 				AC6640812206E19F00C95B6E /* AppDelegate.swift in Sources */,
-				AC168130222EF0E30012B378 /* SplashScreenRouter.swift in Sources */,
 				ACFE047D2225D128005DCE14 /* SharedImagesGridInteractor.swift in Sources */,
 				ACFE046F2225CBEC005DCE14 /* MainTabBarRouter.swift in Sources */,
 				AC6640AE220CB3DD00C95B6E /* ImageEditorDisplayFactory.swift in Sources */,
@@ -436,8 +406,6 @@
 				AC168121222C6FA50012B378 /* SharedImagesGridDataSource.swift in Sources */,
 				AC168116222C4BBC0012B378 /* SharedImagePreviewInteractor.swift in Sources */,
 				AC6640B0220CB8A000C95B6E /* ImageEditorRouterFactory.swift in Sources */,
-				AC16812E222EF0E30012B378 /* SplashScreenRouterFactory.swift in Sources */,
-				AC168132222EF0E30012B378 /* SplashScreenDisplayFactory.swift in Sources */,
 				AC168109222879500012B378 /* SharedImagesListDataSource.swift in Sources */,
 				ACFE047C2225D128005DCE14 /* SharedImagesGridRouterFactory.swift in Sources */,
 				AC6640AA220B8CC700C95B6E /* Theme.swift in Sources */,

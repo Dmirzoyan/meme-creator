@@ -30,7 +30,12 @@ final class SharedImagesListInteractor: SharedImagesListInteracting {
     }
     
     func loadImages() {
-        presenter.present(storageManager.sharedImages)
+        DispatchQueue.global().async { [weak self] in
+            guard let memes = self?.storageManager.sharedMemes()
+            else { return }
+            
+            self?.presenter.present(memes)
+        }
     }
     
     func removeImage(at index: Int) {
@@ -44,7 +49,8 @@ final class SharedImagesListInteractor: SharedImagesListInteracting {
                 let strongSelf = self
             else { return }
             
-            strongSelf.presenter.present(strongSelf.storageManager.sharedImages)
+            let memes = strongSelf.storageManager.sharedMemes()
+            strongSelf.presenter.present(memes)
             strongSelf.presenter.reloadData()
         }
     }

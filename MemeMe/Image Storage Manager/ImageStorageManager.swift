@@ -10,27 +10,24 @@ import UIKit
 import CoreData
 
 protocol ImageStorageManaging {
-    var sharedImages: [SharedImage] { get }
+    func sharedMemes() -> [SharedImage]
     func store(_ image: SharedImage)
     func deleteImage(at index: Int)
 }
 
 final class ImageStorageManager: ImageStorageManaging {
-    
-    var sharedImages = [SharedImage]()
+
+    private var memes = [SharedImage]()
+    private var isMemesLoadInitiated = false
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    func loadImagesFromStore() {
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SharedImages")
-        request.returnsObjectsAsFaults = false
+    func sharedMemes() -> [SharedImage] {
+        if !isMemesLoadInitiated {
+            isMemesLoadInitiated = true
+            loadImagesFromStore()
+        }
         
-        do {
-            let objects = try context.fetch(request)
-            for object in objects {
-                sharedImages.append(sharedImage(for: object as! NSManagedObject))
-            }
-        } catch {}
+        return memes
     }
     
     func store(_ sharedImage: SharedImage) {
@@ -43,7 +40,7 @@ final class ImageStorageManager: ImageStorageManaging {
         do { try context.save() }
         catch {}
         
-        sharedImages.append(sharedImage)
+        memes.append(sharedImage)
     }
     
     func deleteImage(at index: Int) {
@@ -55,12 +52,25 @@ final class ImageStorageManager: ImageStorageManaging {
             let objects = try context.fetch(request)
             if index < objects.count {
                 context.delete(objects[index] as! NSManagedObject)
-                sharedImages.remove(at: index)
+                memes.remove(at: index)
             }
         } catch {}
         
         do { try context.save() }
         catch {}
+    }
+    
+    private func loadImagesFromStore() {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SharedImages")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let objects = try context.fetch(request)
+            for object in objects {
+                memes.append(sharedImage(for: object as! NSManagedObject))
+            }
+        } catch {}
     }
     
     private func sharedImage(for object: NSManagedObject) -> SharedImage {

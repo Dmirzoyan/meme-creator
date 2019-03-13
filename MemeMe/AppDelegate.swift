@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
-        let splashScreenRouter = SplashScreenRouterFactory(navigationController: navigationController).make()
-        splashScreenRouter.start()
+        let mainTabBarRouter = MainTabBarRouterFactory(navigationController: navigationController).make()
+        mainTabBarRouter.start()
         
         return true
     }

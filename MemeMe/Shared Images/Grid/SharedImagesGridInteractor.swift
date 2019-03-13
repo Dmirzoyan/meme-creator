@@ -29,7 +29,12 @@ final class SharedImagesGridInteractor: SharedImagesGridInteracting {
     }
     
     func loadImages() {
-        presenter.present(imageProvider.sharedImages)
+        DispatchQueue.global().async { [weak self] in
+            guard let memes = self?.imageProvider.sharedMemes()
+            else { return }
+            
+            self?.presenter.present(memes)
+        }
     }
     
     func goToImageEditor() {

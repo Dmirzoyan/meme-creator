@@ -111,7 +111,10 @@ extension SharedImagesGridViewController: SharedImagesGridDisplaying {
     
     func display(_ sharedImages: [SharedImage]) {
         dataSource.set(sharedImages)
-        collectionView.reloadData()
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+        }
     }
 }
 

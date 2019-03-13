@@ -34,8 +34,8 @@ final class SharedImagesListViewController: UIViewController {
         setupTableView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         interactor.loadImages()
     }
@@ -93,7 +93,9 @@ extension SharedImagesListViewController: SharedImagesListDisplaying {
                 self?.interactor.removeImage(at: index)
             }
         )
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     func reloadData() {
